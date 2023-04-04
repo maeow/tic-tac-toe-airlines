@@ -79,7 +79,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">เข้าสู่ระบบ</h5>
-            <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close" onclick="cleardata()"></button>
           </div>
           <div class="modal-body">
               <p>ชื่อผู้ใช้งาน :</p>
@@ -118,7 +118,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">ลงทะเบียน</h5>
-            <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close" onclick="cleardata()"></button>
           </div>
           <div class="modal-body">
             <form action="" class="" id="signup-form">
@@ -140,6 +140,8 @@
               <p id="error-msg-signup"></p>
               <div class="signupBtn1">
                 <button class="signupBtn" type="submit" onclick="addUserList()">ลงทะเบียน</button>
+                <br>
+                <p id="btn_login2"></p>
               </div>
             </form>
           </div>

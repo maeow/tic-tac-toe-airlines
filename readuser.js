@@ -16,6 +16,8 @@ let addUserList = () => {
     const signupFeedback = document.querySelector("#error-msg-signup");
     const score = 0;
 
+    const btn_login2 = document.querySelector("#btn_login2");
+
     if(username.length >= 5 && password.length >=5){
         console.log("true")
         let passhash = parseInt(func(password))
@@ -29,6 +31,7 @@ let addUserList = () => {
         })
         signupFeedback.style = "color: green";
         signupFeedback.innerHTML = `ลงทะเบียนสำเร็จ`
+        btn_login2.innerHTML = `<button type="button" style="text-align: center;" id="btnLogin" class="logged-out" data-bs-toggle="modal" data-bs-target="#modal-login">เข้าสู่ระบบ</button>`
         document.getElementById("usernameBox").value = "";
         document.getElementById("passwordBox").value = "";
     }else{
@@ -73,5 +76,17 @@ function checkUser(){
             })
         })
     })
+}
+
+
+function cleardata(){
+    const signupFeedback = document.querySelector("#error-msg-signup");
+    const loginFeedback = document.querySelector("#error-msg");
+    document.getElementById("usernameBox").value = "";
+    document.getElementById("passwordBox").value = "";
+    document.getElementById("usernameLogin").value = "";
+    document.getElementById("passwordLogin").value = "";
+    loginFeedback.innerHTML = "";
+    signupFeedback.innerHTML = "";
 }
 
