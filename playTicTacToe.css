@@ -107,21 +107,13 @@ body{
     background-repeat: round;
 }
 [data-playerImg="img1"]{
-    background-image: url(player2.png);
+    background-image: url(img/player1.png);
 }
 [data-playerImg="img2"]{
-    background-image: url(player1.png);
+    background-image: url(img/player2.png);
 }
 .player{
     margin-bottom: 5px;
-}
-.background{
-    width: 100vw;
-    height: 100vh;
-    /* background-color: aliceblue; */
-    background-image: url(Vector.svg);
-    background-repeat: no-repeat;
-    position: absolute;
 }
 
 #cloud1{
