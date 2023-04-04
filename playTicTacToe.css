@@ -107,10 +107,10 @@ body{
     background-repeat: round;
 }
 [data-playerImg="img1"]{
-    background-image: url(img/player1.png);
+    background-image: url(img/player2.png);
 }
 [data-playerImg="img2"]{
-    background-image: url(img/player2.png);
+    background-image: url(img/player1.png);
 }
 .player{
     margin-bottom: 5px;
