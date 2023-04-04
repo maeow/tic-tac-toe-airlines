@@ -14,6 +14,7 @@ let addUserList = () => {
     var username = document.getElementById("usernameBox").value;
     var password = document.getElementById("passwordBox").value;
     const signupFeedback = document.querySelector("#error-msg-signup");
+    const score = 0;
 
     if(username.length >= 5 && password.length >=5){
         console.log("true")
@@ -24,6 +25,7 @@ let addUserList = () => {
         firebaseRef.push({
             username: username,
             password: passhash,
+            score: score
         })
         signupFeedback.style = "color: green";
         signupFeedback.innerHTML = `ลงทะเบียนสำเร็จ`
