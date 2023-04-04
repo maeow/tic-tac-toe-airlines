@@ -23,9 +23,22 @@
 </head>
   <body>
     <!-- <div class="container"> -->
+      <div class="asset">
+        <img src="img/wave1.svg" class="wave">
+        <img src="img/wave2.svg" class="wave">
+        <img src="img/wave3.svg" class="wave">
+        <img src="img/cloud6.svg" class="asset" id="cloud6">
+        <img src="img/cloud7.svg" class="asset" id="cloud7">
+        <img src="img/airplane.svg" id="lb_plane">
+        <img src="img/circle.svg" id="lb_circle1">
+        <img src="img/circle.svg" id="lb_circle2">
+        <img src="img/circle.svg" id="lb_circle3">
+        <img src="img/star.svg" id="lb_star1">
+        <img src="img/star.svg" id="lb_star2">
+      </div>
       <div class="row">
         <div class="col">
-            <div class="card" >
+            <div class="card leadboard" >
                 <div class="card-body">
                     <div class="row">
                         <b><h4 id="in-card" class="card-title">PASSPORT หนังสือเดินทาง</h5></b>
@@ -82,11 +95,14 @@
                 </div>
                 <!-- <div class="row"><button type="button" class="btn">เล่นเกมเล้ย!</button></div> -->
                 <div class="row"><button type="button" class="btn">วิธีเล่น</button></div>
-                <div class="row"><button type="button" class="btn">ออกจากระบบ</button></div>
+                <!-- <div class="row"><button type="button" class="btn" id="btnLogout">ออกจากระบบ</button></div> -->
+                <div class="row">
+                  <a href="./index.html" class="btn" role="button" id="btnLogout">ออกจากระบบ</a>
+                </div>
             </div>
         </div>
         <div class="col">
-            <div class="container">
+            <div class="container leadboard">
                 <h4> LEADERBOARD </h4>
                 <h5> ตารางจัดอันดับ </h5>
                 <center><table class="table">
@@ -181,5 +197,6 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig)
     </script>
+    <script src="auth_player.js"></script>
   </body>
 </html>
