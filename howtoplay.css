@@ -1,0 +1,102 @@
+/* font-family: 'Comfortaa', cursive; */
+/* font-family: 'IBM Plex Sans Thai', sans-serif; */
+
+body{
+    background-color: #284673;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+/* .wrap-all{
+} */
+
+.wrap-head{
+    text-align: center;
+    font-weight: 500;
+    margin-top: 4vw;
+}
+
+.wrap-content{
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+#cloud6{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#cloud7{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.wave{
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -100;
+}
+
+#starline1{
+    position: absolute;
+    top: 0;
+    width: 2%;
+    left: 2vw;
+    z-index: -100;
+}
+
+#starline2{
+    position: absolute;
+    width: 2%;
+    right: 10vw;
+    top: 15vh;
+    z-index: -100;
+}
+
+
+.bi{
+    font-size: 2vw;
+}
+
+.backpage a{
+    color: white;
+    font-size: 1.25vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.title h4,h5{
+    font-weight: bold;
+    color: white;
+}
+
+.htp-content{
+    background-color: white;
+    font-weight: bold;
+
+}
+
+.card-body{
+    background-color: white;
+    width: 50vw;
+    border-radius: 30px;
+}
+
+.card-body p{
+    font-weight: bold;
+    text-indent: 10vw;
+    margin: 2vw;
+}
