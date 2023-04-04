@@ -1,0 +1,85 @@
+/* font-family: 'Comfortaa', cursive; */
+/* font-family: 'IBM Plex Sans Thai', sans-serif; */
+body{
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    background-color: #284673;
+    margin: 5%;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+.container{
+    background-color: rgb(255, 255, 255);
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    width: 500px;
+    border-radius: 25px;
+    border: solid 2px #000 ;
+    
+}
+h4,h5{
+    text-align: center;
+    font-weight: 600;
+    color: #6B8DC0;
+}
+#score{
+    text-align: right;
+}
+.table{
+    width: 80%;
+}
+.card{
+    border-radius: 25px;
+    width: 700px;
+    /* min-width: 700px; */
+    border: solid 2px #000 ;
+    box-shadow: -11px 11px 4px #00000077;
+    background-color: #FFF8F8;
+}
+#in-card{
+    font-weight: 700;
+    color: #284673;
+    font-size: 1.25vw;
+    margin-left: 0.5vw;
+}
+thead{
+    background-color: #284673;
+    color: white;
+}
+.container-fluid{
+    width: 50%;
+    /* margin-left: 15vw; */
+}
+.btn{
+    background-color: #AAC6FB;
+    margin-top: 2vw;
+    color: #284673;
+    width: 13vw;
+    border-radius: 2vw;
+    font-size: 1.25vw;
+    font-weight: 700;
+}
+.btn:hover{
+    background-color: #FFE3ED;
+    color: #284673;
+    font-weight: 700;
+}
+.card-text{
+    font-size: 1.5vw;
+    color: #284673;
+}
+/* .wrapped-stamp{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.mockup-stamp{
+    width: calc(100% / 3);
+    height: 75px;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color: #6B8DC0;
+} */
