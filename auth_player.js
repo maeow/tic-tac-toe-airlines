@@ -66,3 +66,10 @@ function loginUser(event){
         loginForm.reset();
     })
 }
+
+//logOut
+const btnLogout = document.querySelector("#btnLogout");
+btnLogout.addEventListener("click", function(){
+    firebase.auth().signOut();
+    console.log("Logout complete.");
+})

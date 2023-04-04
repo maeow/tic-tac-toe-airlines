@@ -50,12 +50,14 @@ body{
     right: 0;
     top: 0;
     position: absolute;
+    
 }
 #cloud7{
     width: 47%;
     right: 0;
     top: 0;
     position: absolute;
+    
 }
 
 .home_main{
@@ -168,13 +170,13 @@ button{
 
 .modal-title{
     width: 100vw;
-    font-size: 1.5vw;
     text-align: center;
     font-weight:bolder;
     color: #284673;
 }
 
 .modal-body{
+    background-color: white;
     font-weight:bolder;
     color: #284673;
 }
@@ -203,13 +205,23 @@ button{
     padding: 0.2vw;
     color: #D3D3D3;
 }
+.signupInput{
+    gap: 1vw;
+    padding: 0.2vw;
+    color: #D3D3D3;
+}
 
 .boxInput{  
     border: none;
-    width: 80%;
 }
 
 .loginIcon{
+    font-size: 1.5rem;
+    color: #D3D3D3;
+    padding: 20%;
+    margin-left: 1vw;
+}
+.signupIcon{
     font-size: 1.5rem;
     color: #D3D3D3;
     padding: 20%;
@@ -225,8 +237,23 @@ button{
     height: 2vw;
     text-align: center;
 }
+.signupBtn{
+    background-color:#284673;
+    color: white;
+    font-weight:bold;
+    font-size: 20px;
+    border-radius: 1vw;
+    height: 2vw;
+    text-align: center;
+}
 
 .loginBtn1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+}
+.signupBtn1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -240,13 +267,14 @@ a{
 a:hover{
     color: #284673;
 }
-h1{
-    font-size: 4vw;
-    margin-top: -5vw;
-}
-#login-form{
-    padding-left: 2vw;
-    padding-right: 2vw;
-    ;
+
+
+#error-msg{
+    text-align: center;
+    margin-top: 1vw;
 }
 
+#error-msg-signup{
+    text-align: center;
+    margin-top: 1vw;
+}
