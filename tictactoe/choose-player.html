@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style-pe.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <title>Choose Mode To Play</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap');
+    span > h5{
+    margin-top: 0.5rem;
+    color: black;
+    text-align: left;
+    font-size: 1rem;
+    }
+    #find-room { 
+    font-weight: 500;
+    background-color: #284673;
+    transition:  0.15s ease-out;
+    }
+    #find-room:hover{
+        background-color: #ADC9FF;
+        border: 1px solid #ADC9FF;
+    }
+
+    lord-icon{
+        position: absolute;
+    }
+    b{
+        margin-left: 2.5rem;
+    }
+
+</style>
+<body>
+    
+    <div class="container-fluid">
+        <img id="star" src="img-pe/star.svg">
+        <img id="bottom" src="img-pe/bottom.svg">
+        <img id="bottom-phone" src="img-pe/bottom-phone.svg">
+
+        <div class="modal fade" id="modalFindRoom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                    
+                <span><lord-icon
+                    src="https://cdn.lordicon.com/akuwjdzh.json"
+                    trigger="loop"
+                    state="loop"
+                    >
+                </lord-icon><b>กำลังหาห้องให้อยู่น้า~</b> <br><h5>รอสักครู่ กำลังหาเพื่อนเล่นให้คุณ!</h5></span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="find-room"class="btn btn-secondary" data-dismiss="modal">ยกเลิกการหาห้อง</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div id="topic" class="container">
+            <a class="button" href="#"><i class="bi bi-chevron-left"></i>ย้อนกลับ</a>
+            <h4>CHOOSE MODE TO PLAY</h4>
+            <h5>เลือกโหมดในการเล่นเกม</h4>
+        </div>
+        <div class="container" id="grid">
+        <center><div class="row">
+            <div class="col">
+                <div class="dot"><a href="XO.html" data-toggle="modal" data-target="#modalFindRoom" data-backdrop="static"><img id="pic" src="img-pe/multi-player.svg"></a></div>
+                <h4 style="margin-top: 1rem;">MULTIPLAYER ONLINE</h4>
+                <h5>เล่นออนไลน์กับเพื่อน</h5>
+            </div>
+            <div class="col">
+                <div class="dot1"><a href="XO.html" data-toggle="modal" data-target="#modalFindRoom" data-backdrop="static"><img id="pic" src="img-pe/ai-player.svg"></a></div>
+                <h4 style="margin-top: 1rem;">AI (BOT)</h4>
+                <h5>เล่นกับบอท</h5>
+            </div>
+        </div></center>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
