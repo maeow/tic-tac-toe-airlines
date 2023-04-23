@@ -1,0 +1,265 @@
+body{
+    background-color: #284673;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    
+    /* height: 100vh; */
+    min-height: 100vh;
+}
+.container-fluid{
+    overflow-y: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+#star{
+    position: absolute;
+    /* height: 40%; */
+    width: 3%;
+    left: 0px;
+    top:0px;
+    animation : translate-star 1.25s ease-in-out ;
+}
+#top-right{
+    position: absolute;
+    width: 40%;
+    right: 0px;
+}
+#bottom{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0;
+    animation : translate 4s ease-in-out infinite;
+    /* bottom: -10vh; */
+}
+@keyframes translate {
+0% {transform: translateY(0px);}
+50% {transform: translateY(20px);}
+100% {transform: translateY(0px);}
+}
+
+@keyframes translate-star {
+from {transform: translateY(-500px);}
+to {transform: translateY(0px);}
+}
+#top{
+    position: absolute;
+    width: 80%;
+    right: 0px;
+}
+h4{
+
+    font-size: 1.75rem;
+    text-align: center;
+    color: white;
+}
+h5{
+    font-size: 1.25rem;
+    text-align: center;
+    color: white;
+}
+#topic{
+    /* position: relative; */
+    padding-top: 6vh;
+}/* margin-left: 35vh; */
+
+.button{
+    font-weight: 500;
+    font-size: 1.5vw;
+    color: white;
+    position: absolute;
+    display: inline-block;
+    left: 2.5vh;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: white;
+    transition:  0.15s ease-out;
+}
+.button:hover{
+    color: #FFE3ED;
+    text-decoration: none;
+}
+i{
+    position: relative;
+    top: -.5vw;
+    left: 0px;
+}
+
+.dot {
+height: 25vw;
+width: 25vw;
+background-color: #ffffff;
+border-radius: 50%;
+display: inline-block;
+margin-top: 2vw;
+transition:  0.25s ease-in-out;
+/* display: none; */
+}
+.dot:hover{
+    background-color: #FFE3ED;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+#grid{
+    position: relative;
+    margin-top: 8vh;
+    width: 50%;
+}
+.carouselExampleControls{
+    /* width: 50%; */
+    height: 30vh;
+}
+.carousel-item{
+    /* width: 50%; */
+    /* margin-top: 5vw; */
+    height: 30vw;
+}
+#place{
+    position: relative;
+    margin-top: 2vw;
+    margin-left: 0.5vh;
+    width: 60%;
+}
+.arrive{
+    margin-top: 1vh;
+    font-size: 2rem;
+    color: #284673;
+    font-weight: 500;
+    /* display: none; */
+}
+.btn{
+    width: 20rem;
+    font-size: 1.25rem;
+    background-color: #ADC9FF;
+    color: #284673;
+    font-weight: 600;
+    border-radius: 50vh;
+    transition:  0.25s ease-in-out;
+}
+.btn:hover{
+    background-color: #FFE3ED;
+    color: #284673;
+}
+.carousel-indicators{
+    /* padding-top: 2vw; */
+    position: relative;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    width: 5vw;
+    height: 5vw;
+}
+#bottom-phone{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0;
+    display: none;
+}
+
+@media only screen and (max-width: 915px) {
+    .dot{
+        width: 25vh;
+        height: 25vh;
+    }
+    #grid{
+        width: 100%;
+        padding-bottom: 15rem;
+    }
+    .carousel-item{
+    height: 30vh;
+}
+.btn{
+    font-size: 1.25rem;
+}
+h4,.button{
+    font-size: 1.5rem;
+}
+h5{
+    font-size: 1.25rem;
+}
+#top-right{
+    width: 60%;
+}
+#star{
+    width: 5%;
+}
+#topic{
+    padding-top: 15vh;
+}
+#bottom{
+    display: none;
+}
+#bottom-phone{
+    width: 80%;
+    display: block;
+}
+.arrive{
+    margin-top: 1vh;
+    font-size: 1.5rem;
+}
+.button{
+    font-size: 5vw;
+    margin-left: 3vw;
+    }
+
+}
+
+@media only screen and (max-width: 475px) {
+    .dot{
+        width: 15rem;
+        height: 15rem;
+    }
+    .carousel-item{
+        height: 20rem;
+    }
+    .button{
+        font-size: 5vw;
+        /* margin-left: -1rem; */
+        }
+        #topic{
+            width: 80%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .btn{
+        font-size: 1rem;
+        width: 15em;
+    }
+    h4,.button{
+        font-size: 1.5rem;
+    }
+    h5{
+        font-size: 1.25rem;
+    }
+    .button{
+        margin-left: 0;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    .dot{
+        width: 12rem;
+        height: 12rem;
+    }
+    .carousel-item{
+    height: 15rem;
+}
+}
+@media only screen and (max-width: 280px) {
+    h4,.button{
+        font-size: 1.25rem;
+    }
+    h5{
+        font-size: 1rem;
+    }
+    .dot{
+        width: 10rem;
+        height: 10rem;
+    }
+    .carousel-item{
+    height: 12rem;
+}
+}
