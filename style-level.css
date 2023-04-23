@@ -49,12 +49,12 @@ to {transform: translateY(0px);}
 }
 h4{
 
-    font-size: 1.75rem;
+    font-size: 1.5vw;
     text-align: center;
     color: white;
 }
 h5{
-    font-size: 1.25rem;
+    font-size: 1.25vw;
     text-align: center;
     color: white;
 }
@@ -118,16 +118,17 @@ transition:  0.25s ease-in-out;
 }
 #place{
     position: relative;
-    margin-top: 2vw;
+    padding-top: 2vw;
+    margin-top: 3vw;
     margin-left: 0.5vh;
     width: 60%;
 }
 .arrive{
-    margin-top: 1vh;
+    /* margin-top: 1vh; */
     font-size: 2rem;
     color: #284673;
     font-weight: 500;
-    /* display: none; */
+    display: none;
 }
 .btn{
     width: 20rem;

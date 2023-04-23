@@ -14,24 +14,77 @@
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap');
+    [class*="country-no"]{
+        margin-top: 1vh;
+        font-weight: 600;
+        /* display: none; */
+        visibility: visible;
+        font-size: 1.25rem;
+        display: block;
+        transform: translateY(-25px);
+        opacity: 0;
+        transition:  .25s;
+    }
+    [class*="country-cp"]{
+        /* margin-top: 1vh; */
+        font-weight: 600;
+        /* display: block; */
+        font-size: 1.25rem;
+        display: none;
+        visibility: visible;
+        /* display: block; */
+        transition:  .25s;
+        transform: translateY(-25px);
+        opacity: 0;
+        
+    }
+
     .dot-level {
-    height: 18rem;
-    width: 18rem;
+    height: 15vw;
+    width: 15vw;
     background-color: #ffffff;
     border-radius: 50%;
     display: inline-block;
     transition:  0.25s ease-in-out;
     /* display: none; */
     }
-    .dot-level1{
-    height: 18rem;
-    width: 18rem;
-    background-color: #ffffff;
-    border-radius: 50%;
-    transition:  0.25s ease-in-out;
-    /* display: inline-block; */
-    display: none;
+    .dot-level:hover ~ [class*='country-no']{
+        /* visibility: visible; */
+        transform: translateY(0px);
+        opacity: 1;
     }
+
+    .dot-level1{
+    height: 15vw;
+    width: 15vw;
+    background-size: cover;
+    background-color: white;
+    background-position: 0% 50%;
+    opacity: 0.9;
+    border-radius: 50%;
+    transition:  2s;
+    display: none;
+    /* display: inline-block; */
+     border: rgba(255, 255, 255, 0.432) solid 5px;
+     box-shadow: rgba(0, 0, 0, 0.25) 9px 4px 10px;
+    
+    }
+    .dot-level1:hover{
+        opacity: 1;
+        /* animation: changes 4s  linear; */
+        transform: scale(1.05);
+        background-position: 100% 50%;
+        transition:  5s;
+    }
+    .dot-level1:hover ~ [class*='country-cp']{
+        /* visibility: visible; */
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    /* #row-two > .col:nth-last-child(-n+3)  #country1-1, #row-two > .col:nth-last-child(-n+3)  #country2-2{
+        color: #284673;
+    } */
+
     #plane{
         position: relative;
         margin-top: 2rem;
@@ -42,41 +95,33 @@
         position: relative;
         width: 90%;
     }
-    #country1,#country2{
-        margin-top: 1vh;
-        font-weight: 600;
-        /* display: none; */
-        display: block;
-        transition:  0.25s ease-in-out;
-    }
-    #country1-1,#country2-2{
-        margin-top: 1vh;
-        font-weight: 600;
-        /* display: block; */
-        display: none;
-        transition:  0.25s ease-in-out;
-    }
+
     .dot-level:hover{
         background-color: #FFE3ED;
         transform: scale(1.05);
         cursor: pointer;
     }
-    .dot-level:hover~#country1,.dot-level:hover~#country2{
-        color: #ADC9FF;
-        /* transition: ease 0.25s; */
-        cursor: pointer;
-    }
+
     #grid-level{
     position: relative;
     margin-top: 2rem;
     }
+
     #bottom-level{
     position: absolute;
     width: 100%;
     left: 0px;
     bottom: 0;
     animation : translate 4s ease-in-out infinite;
-    /* bottom: -10vh; */
+    }
+    @media only screen and (max-width: 1800px) {
+        /* .dot-level,.dot-level1{
+            width: 18vw;
+            height: 18vw;
+        } */
+        #grid-level{
+            width: 60vw;
+        }
     }
     @media only screen and (max-width: 980px) {
     .row{
@@ -92,7 +137,19 @@
         width: 15rem;
         height: 15rem;
     }
+    /* #row-two > .col:nth-last-child(-n+3)  #country1-1, #row-two > .col:nth-last-child(-n+3)  #country2-2{
+        color: white;
+    } */
 }
+
+/* เซตว่าด่านหลักผ่านแล้ว  */
+/* .fr{
+    display: none;
+   
+}
+.fr{
+    display: block;
+} */
 
 
     
@@ -103,7 +160,7 @@
         <!-- <img id="top" src="img-miew/top.svg"> -->
         <img id="star" src="img-miew/star.svg">
         <img id="top-right" src="img-miew/top-right.svg">
-        <img id="bottom-level" src="img-miew/bottom.svg">
+        <img id="bottom-level" src="img-miew/bottom2.svg">
         
         <div id="topic" class="container">
             <a class="button" href="player_lb.html"><i class="bi bi-chevron-left"></i>ย้อนกลับ</a>
@@ -115,64 +172,64 @@
             <div class="row" style="margin-bottom: 2vh;">
                 <div class="col">
                     <center>
-                        <span class="dot-level"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
-                        <span class="dot-level1"><img id="stamp" style="width: 90%; margin-top: 2.5vh; margin-left: .75vh;" src="img-miew/country/france.svg"></span>
-                        <h4 id="country1" >UNKNOWN</h4>
-                        <h5 id="country2">ประเทศ ????</h5>
-                        <h4 id="country1-1" >FRANCE</h4>
-                        <h5 id="country2-2">ประเทศฝรั่งเศส</h5>
+                        <span class="dot-level fr-no"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
+                        <span class="dot-level1 fr" style="background-image: url(/img-miew/landmark/FR.png);"></span>
+                        <h4 class="fr-no country-no" >UNKNOWN</h4>
+                        <h5 class="fr-no country-no" >ประเทศ ????</h5>
+                        <h4 class="fr country-cp"  >FRANCE</h4>
+                        <h5 class="fr country-cp" >ประเทศฝรั่งเศส</h5>
                     </center>
                 </div>
                 <div class="col">
                     <center>
-                        <span class="dot-level"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
-                        <span class="dot-level1"><img id="stamp" style="margin-top: 2vh; margin-left: .5vh;" src="img-miew/country/korea.svg"></span>
-                        <h4 id="country1" >UNKNOWN</h4>
-                        <h5 id="country2">ประเทศ ????</h5>
-                        <h4 id="country1-1" >SOUTH KOREA</h4>
-                        <h5 id="country2-2">ประเทศเกาหลีใต้</h5>
+                        <span class="dot-level kr-no"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
+                        <span class="dot-level1 kr" style="background-image: url(/img-miew/landmark/KR.png);"></span>
+                        <h4 class="kr-no country-no" >UNKNOWN</h4>
+                        <h5 class="kr-no country-no" >ประเทศ ????</h5>
+                        <h4 class="kr country-cp"  >SOUTH KOREA</h4>
+                        <h5 class="kr country-cp" >ประเทศเกาหลีใต้</h5>
                     </center>
                 </div>
                 <div class="col">
                     <center>
-                        <span class="dot-level"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
-                        <span class="dot-level1"><img id="stamp" style="width: 95%; margin-top: 2vh; margin-left: 2vh;" src="img-miew/country/usa.svg"></span>
-                        <h4 id="country1" >UNKNOWN</h4>
-                        <h5 id="country2">ประเทศ ????</h5>
-                        <h4 id="country1-1" >UNITED STATES</h4>
-                        <h5 id="country2-2">ประเทศสหรัฐอเมริกา</h5>
+                        <span class="dot-level usa-no"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
+                        <span class="dot-level1 usa" style="background-image: url(/img-miew/landmark/USA.png);"></span>
+                        <h4 class="usa-no country-no" >UNKNOWN</h4>
+                        <h5 class="usa-no country-no" >ประเทศ ????</h5>
+                        <h4 class="usa country-cp"  >UNITED STATES</h4>
+                        <h5 class="usa country-cp" >สหรัฐอเมริกา</h5>
                     </center>
                 </div>
             </div>
-            <div class="row" style="margin-bottom: 2vh;">
+            <div class="row" id="row-two" style="margin-bottom: 2vh;">
                 <div class="col">
                     <center>
-                        <span class="dot-level"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
-                        <span class="dot-level1"><img id="stamp" style="margin-top: 1.5vh; margin-left: 0vh;" src="img-miew/country/japan.svg"></span>
-                        <h4 id="country1" >UNKNOWN</h4>
-                        <h5 id="country2">ประเทศ ????</h5>
-                        <h4 id="country1-1" >JAPAN</h4>
-                        <h5 id="country2-2">ประเทศญี่ปุ่น</h5>
+                        <span class="dot-level jp-no"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
+                        <span class="dot-level1 jp" style="background-image: url(/img-miew/landmark/JP.png);"></span>
+                        <h4 class="jp-no country-no" >UNKNOWN</h4>
+                        <h5 class="jp-no country-no" >ประเทศ ????</h5>
+                        <h4 class="jp country-cp"  >JAPAN</h4>
+                        <h5 class="jp country-cp" >ประเทศญี่ปุ่น</h5>
                     </center>
                 </div>
                 <div class="col">
                     <center>
-                        <span class="dot-level"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
-                        <span class="dot-level1"><img id="stamp" style="margin-top: 1.75vh; margin-left: 1vh;" src="img-miew/country/Thai.svg"></span>
-                        <h4 id="country1" >UNKNOWN</h4>
-                        <h5 id="country2">ประเทศ ????</h5>
-                        <h4 id="country1-1" >THAILAND</h4>
-                        <h5 id="country2-2">ประเทศไทย</h5>
+                        <span class="dot-level th-no"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
+                        <span class="dot-level1 th" style="background-image: url(/img-miew/landmark/TH.png);"></span>
+                        <h4 class="th-no country-no" >UNKNOWN</h4>
+                        <h5 class="th-no country-no" >ประเทศ ????</h5>
+                        <h4 class="th country-cp"  >THAILAND</h4>
+                        <h5 class="th country-cp" >ประเทศไทย</h5>
                     </center>
                 </div>
                 <div class="col">
                     <center>
-                        <span class="dot-level"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
-                        <span class="dot-level1"><img id="stamp" style="margin-top: 1.75vh; margin-left: 1vh;" src="img-miew/country/UK.svg"></span>
-                        <h4 id="country1" >UNKNOWN</h4>
-                        <h5 id="country2">ประเทศ ????</h5>
-                        <h4 id="country1-1" >UNITED KINGDOM</h4>
-                        <h5 id="country2-2">ประเทศสหราชอาณาจักร</h5>
+                        <span class="dot-level uk-no"><a href="semi-level.html"><img id="plane" src="img-miew/plane.svg"></a></span>
+                        <span class="dot-level1 uk" style="background-image: url(/img-miew/landmark/UK.png);"></span>
+                        <h4 class="uk-no country-no" >UNKNOWN</h4>
+                        <h5 class="uk-no country-no" >ประเทศ ????</h5>
+                        <h4 class="uk country-cp"  >UNITED KINGDOM</h4>
+                        <h5 class="uk country-cp" >สหราชอาณาจักร</h5>
                     </center>
                 </div>
             </div>
