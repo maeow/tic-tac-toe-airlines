@@ -73,8 +73,7 @@ function checkUser() {
   const statePlayer = firebase.database().ref("state");
   const score = 0;
 
-  statePlayer
-  .set({
+  statePlayer.set({
     username: userLogin,
     password: passLogin_hash,
     score: score,
@@ -88,7 +87,7 @@ function checkUser() {
         console.log(id + " " + playerID);
       });
     });
-});
+  });
 
   ref.once("value").then((snapshot) => {
     snapshot.forEach((data) => {
@@ -99,7 +98,7 @@ function checkUser() {
         if (useLogin.value == username) {
           console.log(useLogin.value);
           console.log(username);
-        if (passLogin_hash == password) {
+          if (passLogin_hash == password) {
             console.log("Login complete");
             location.replace("./player_lb.html");
             statePlayer.set({
@@ -107,6 +106,13 @@ function checkUser() {
               password: passLogin_hash,
               score: score,
             });
+
+            const tictac = {
+              name: userLogin,
+              score: score,
+            };
+
+            localStorage.setItem("tictac", JSON.stringify(tictac));
           }
         } else {
           console.log("invalid");
@@ -118,7 +124,6 @@ function checkUser() {
       });
     });
   });
-  
 }
 
 function cleardata() {
