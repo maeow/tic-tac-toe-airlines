@@ -20,8 +20,8 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="lobby_style.css">
-    <script src="lobby.js"></script>
     <script src="auth_player.js"></script>
+    <script src="lobby.js"></script>
 
 </head>
   <body>
@@ -93,14 +93,16 @@
               </div>
             </div>
           </div>
-            
               <div class="container-fluid menu1">
-                <div class="row">
-                  <a href="./playTicTacToe.html" class="btn" role="button">เล่นเกมเล้ย!</a>
+                <div class="row menubtn">
+                  <a href="./level.html" class="btn" role="button">เล่นเกมเล้ย!</a>
                 </div>
                 <!-- <div class="row"><button type="button" class="btn">เล่นเกมเล้ย!</button></div> -->
-                <div class="row"><button type="button" class="btn">วิธีเล่น</button></div>
-                <div class="row"><button type="button" class="btn">ออกจากระบบ</button></div>
+                <!-- <div class="row"><button type="button" class="btn">วิธีเล่น</button></div> -->
+                <div class="row">
+                  <a href="./howtoplay.html" class="btn" role="button">วิธีเล่น</a>
+                </div>
+                <button onclick="logout()" class="btn btn-outline-light logged-in" >ออกจากระบบ</button>
             </div>
         </div>
         <!-- <div class="col">
@@ -152,8 +154,13 @@
             <a href="./playTicTacToe.html" class="btn" role="button">เล่นเกมเล้ย!</a>
           </div>
           <!-- <div class="row"><button type="button" class="btn">เล่นเกมเล้ย!</button></div> -->
-          <div class="row"><button type="button" class="btn">วิธีเล่น</button></div>
-          <div class="row"><button type="button" class="btn">ออกจากระบบ</button></div>
+          <div class="row">
+            <a href="./howtoplay.html" class="btn" role="button">วิธีเล่น</a>
+          </div>
+          <!-- <div class="row"><button type="button" class="btn">ออกจากระบบ</button></div> -->
+          <div class="row">
+            <a href="./index.html" class="btn" role="button" id="btnLogout">ออกจากระบบ</a>
+          </div>
       </div>
     </div>
 <!-- </div> -->

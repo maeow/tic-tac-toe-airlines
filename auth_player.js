@@ -28,6 +28,7 @@ function createUser(event){
         signupFeedback.style = "color: red";
         signupFeedback.innerHTML = `<i class='bi bi-exclamation-triangle-fill'></i> ${error.message}`
         signupForm.reset();
+        console.log(error);
     })
 };
 signupForm.addEventListener("submit", createUser);
@@ -47,21 +48,22 @@ async function createNewAccount() {
     }else{
         console.log("Unavailable user");
     }
+    console.log(user.uid)
 });
 }
 
 function writeUserData(user) {
-    console.log("Write Data")
+    // console.log("Write Data")
     firebase.database().ref('users/' + user.uid).set(user).catch(error => {
         console.log(error.message)
     });
 }
 
 function getUserData(uid) {
-    console.log("Read");
+    // console.log("Read");
     var userRef = firebase.database().ref('users')
     userRef.once("value", snap => {
-        console.log(snap.val());
+        // console.log(snap.val());
     })
 }
 
@@ -98,6 +100,16 @@ function loginUser(event){
         loginForm.reset();
     })
 }
+
+function logout(){
+    firebase.auth().signOut().then(() => {
+        location.replace("./index.html");
+        console.log("User sign out");
+        console.log(user.uid);
+    });
+};
+
+
 
 
 
