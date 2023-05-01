@@ -25,87 +25,86 @@
 
 </head>
   <body>
+    <div class="asset">
+      <img src="img/wave1.svg" class="wave">
+      <img src="img/wave2.svg" class="wave">
+      <img src="img/wave3.svg" class="wave">
+      <img src="img/cloud6.svg" class="asset" id="cloud6">
+      <img src="img/cloud7.svg" class="asset" id="cloud7">
+      <img src="img/airplane.svg" id="lb_plane">
+      <img src="img/circle.svg" id="lb_circle1">
+      <img src="img/circle.svg" id="lb_circle2">
+      <img src="img/circle.svg" id="lb_circle3">
+      <img src="img/star.svg" id="lb_star1">
+      <img src="img/star.svg" id="lb_star2">
+    </div>
     <!-- <div class="container"> -->
-      <div class="asset">
-        <img src="img/wave1.svg" class="wave">
-        <img src="img/wave2.svg" class="wave">
-        <img src="img/wave3.svg" class="wave">
-        <img src="img/cloud6.svg" class="asset" id="cloud6">
-        <img src="img/cloud7.svg" class="asset" id="cloud7">
-        <img src="img/airplane.svg" id="lb_plane">
-        <img src="img/circle.svg" id="lb_circle1">
-        <img src="img/circle.svg" id="lb_circle2">
-        <img src="img/circle.svg" id="lb_circle3">
-        <img src="img/star.svg" id="lb_star1">
-        <img src="img/star.svg" id="lb_star2">
-      </div>
-      <div class="row">
-        <div class="col">
-            <div class="card leadboard" >
-                <div class="card-body">
-                    <div class="row">
-                        <b><h4 id="in-card" class="card-title">PASSPORT หนังสือเดินทาง</h5></b>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://sv1.picz.in.th/images/2023/04/04/mg5TWk.png" alt="mg5TWk.png" border="0" />
-                            <h5 style="padding-top: 1vw;"id="in-card">อันดับที่ 3</h5>
-                        </div>
-                        <div class="col-8">
-                            <div class="row">
-                                <div class="col-8">
-                                <h6 class="card-subtitle mb-2 text-muted">ชื่อ:</h6>
-                                <p class="card-text" id="usernameText">Stephanie</p>
-                                <h6 class="card-subtitle mb-2 text-muted">แลนด์มาร์กประเทศที่คุณค้นพบ!</h6>
-                                </div>
-                                <div class="col">
-                                <h6 class="card-subtitle mb-2 text-muted">คะแนน:</h6>
-                                <p class="card-text" id="scoreText">300</p>
-                            </div>  
-                            <div class="row">
-                                <div class="col" id="stamp"><img src="https://sv1.picz.in.th/images/2023/04/04/mgPh40.png" alt="mgPh40.png" border="0"></div>
-                                <div class="col" id="stamp"><img src="https://sv1.picz.in.th/images/2023/04/04/mgPBaR.png" alt="mgPBaR.png" border="0"></div>
-                                <div class="col" id="stamp"><img src="https://sv1.picz.in.th/images/2023/04/04/mgPkxu.png" alt="mgPkxu.png" border="0"></div>
-                            </div><div class="row">
-                                <div class="col" id="stamp"><img src="https://sv1.picz.in.th/images/2023/04/04/mgPh40.png" alt="mgPh40.png" border="0"></div>
-                                <div class="col" id="stamp"><img src="https://sv1.picz.in.th/images/2023/04/04/mgPBaR.png" alt="mgPBaR.png" border="0"></div>
-                                <div class="col" id="stamp"><img src="https://sv1.picz.in.th/images/2023/04/04/mgPkxu.png" alt="mgPkxu.png" border="0"></div>
-                            </div>
-                        </div>
-                            
-                        <div class="wrapped-stamp">
-                            <div class="mockup-stamp">
-                            </div>
-                            <div class="mockup-stamp">
-                            </div>
-                            <div class="mockup-stamp">
-                            </div>
-                            <div class="mockup-stamp">
-                            </div>
-                            <div class="mockup-stamp">
-                            </div>
-                            <div class="mockup-stamp">
-                            </div>
-                        </div>
-                        </div>
-                        
-                </div>
-                </div>
+      <div class="row board">
+        <div class="col" style="padding-bottom: 20px;">
+          <div style="display: flex; justify-content: center;">
+            <div class="card" >
+              <div class="card-body">
+                  <div class="row">
+                      <b><h4 id="in-card" class="card-title">PASSPORT หนังสือเดินทาง</h5></b>
+                  </div>
+                  <div class="row">
+                      <div class="col-4 d-flex flex-column align-items-center">
+                          <img class="userphoto" src="https://sv1.picz.in.th/images/2023/04/04/mg5TWk.png" alt="mg5TWk.png" border="0" />
+                          <h5 style="padding-top: 1vw;"id="in-card">อันดับที่ 3</h5>
+                      </div>
+                      <div class="col-8">
+                          <div class="row">
+                              <div class="col-8">
+                              <h6 class="card-subtitle mb-2 text-muted">ชื่อ:</h6>
+                              <p class="card-text" id="usernameText">Stephanie</p>
+                              <h6 class="card-subtitle mb-2 text-muted">แลนด์มาร์กประเทศที่คุณค้นพบ!</h6>
+                              </div>
+                              <div class="col">
+                              <h6 class="card-subtitle mb-2 text-muted">คะแนน:</h6>
+                              <p class="card-text" id="scoreText">300</p>
+                          </div>  
+                          <div class="row">
+                              <div class="col" id="stamp"><img class="stamp" src="https://sv1.picz.in.th/images/2023/04/04/mgPh40.png" alt="mgPBaR.png"></div>
+                              <div class="col" id="stamp"><img class="stamp" src="https://sv1.picz.in.th/images/2023/04/04/mgPBaR.png" alt="mgPBaR.png" border="0"></div>
+                              <div class="col" id="stamp"><img class="stamp" src="https://sv1.picz.in.th/images/2023/04/04/mgPkxu.png" alt="mgPkxu.png" border="0"></div>
+                              <div class="col" id="stamp"><img class="stamp" src="https://sv1.picz.in.th/images/2023/04/04/mgPh40.png" alt="mgPh40.png" border="0"></div>
+                              <div class="col" id="stamp"><img class="stamp" src="https://sv1.picz.in.th/images/2023/04/04/mgPBaR.png" alt="mgPBaR.png" border="0"></div>
+                              <div class="col" id="stamp"><img class="stamp" src="https://sv1.picz.in.th/images/2023/04/04/mgPkxu.png" alt="mgPkxu.png" border="0"></div>
+                          </div>
+                      </div>
+                          
+                      <div class="wrapped-stamp">
+                          <div class="mockup-stamp">
+                          </div>
+                          <div class="mockup-stamp">
+                          </div>
+                          <div class="mockup-stamp">
+                          </div>
+                          <div class="mockup-stamp">
+                          </div>
+                          <div class="mockup-stamp">
+                          </div>
+                          <div class="mockup-stamp">
+                          </div>
+                      </div>
+                      </div>
+                      
               </div>
-              <div class="container-fluid">
+              </div>
+            </div>
+          </div>
+            
+              <div class="container-fluid menu1">
                 <div class="row">
                   <a href="./playTicTacToe.html" class="btn" role="button">เล่นเกมเล้ย!</a>
                 </div>
                 <!-- <div class="row"><button type="button" class="btn">เล่นเกมเล้ย!</button></div> -->
                 <div class="row"><button type="button" class="btn">วิธีเล่น</button></div>
-                <!-- <div class="row"><button type="button" class="btn" id="btnLogout">ออกจากระบบ</button></div> -->
-                <div class="row">
-                  <a href="./index.html" class="btn" role="button" id="btnLogout">ออกจากระบบ</a>
-                </div>
+                <div class="row"><button type="button" class="btn">ออกจากระบบ</button></div>
             </div>
         </div>
-        <div class="col">
-            <div class="container leadboard">
+        <!-- <div class="col">
+            <div class="container">
                 <h4> LEADERBOARD </h4>
                 <h5> ตารางจัดอันดับ </h5>
                 <center><table class="table">
@@ -116,7 +115,7 @@
                       <th id="score" scope="col">คะแนน</th>
                     </tr>
                   </thead>
-                  <tbody id="scoreTable">
+                  <tbody id="scoreTablee">
                     <tr>
                       <th>scope</th>
                       <td>name</td>
@@ -125,11 +124,41 @@
                   </tbody>
                 </table></center>
             </div>
-        </div>
+        </div> -->
+        <div class="col scoretable">
+          <div class="container">
+              <h4> LEADERBOARD </h4>
+              <h5> ตารางจัดอันดับ </h5>
+              <center><table class="table score">
+                <thead>
+                  <tr>
+                    <th scope="col">อันดับ</th>
+                    <th scope="col">ชื่อผู้ใช้</th>
+                    <th id="score" scope="col">คะแนน</th>
+                  </tr>
+                </thead>
+                <tbody id="scoreTable">
+                  <tr>
+                    <th scope="col">scope</th>
+                    <td scope="col">name</td>
+                    <td>score</td>
+                  </tr>
+                </tbody>
+              </table></center>
+          </div>
+      </div>
+        <div class="container-fluid menu2">
+          <div class="row">
+            <a href="./playTicTacToe.html" class="btn" role="button">เล่นเกมเล้ย!</a>
+          </div>
+          <!-- <div class="row"><button type="button" class="btn">เล่นเกมเล้ย!</button></div> -->
+          <div class="row"><button type="button" class="btn">วิธีเล่น</button></div>
+          <div class="row"><button type="button" class="btn">ออกจากระบบ</button></div>
+      </div>
     </div>
 <!-- </div> -->
     <script>
-
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyC7TQk61NJNHzgUJzAGKMYJCWNreTXa-DU",
   authDomain: "tictactoe-test-f76ca.firebaseapp.com",
