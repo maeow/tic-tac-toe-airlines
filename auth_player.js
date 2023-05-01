@@ -1,5 +1,5 @@
 const signupForm = document.querySelector("#signup-form");
-signupForm.addEventListener("submit", createUser);
+// signupForm.addEventListener("submit", createUser);
 const signupFeedback = document.querySelector("#feedback-msg-signup");
 const signupModal = new bootstrap.Modal(document.querySelector("#modal-signup"));
 
@@ -9,12 +9,15 @@ function createUser(event){
     event.preventDefault();
     const email = signupForm["input-email-signup"].value;
     const password = signupForm["input-password-signup"].value;
+    const userRef = firebase.database().ref("UserList");
+    const score = 0;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
         console.log("signup")
         signupFeedback.style = "color: green";
         signupFeedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> signup completed.";
+        writeUserData(user)
         signupForm.reset();
         setTimeout(() => {
             signupModal.hide();
@@ -26,15 +29,44 @@ function createUser(event){
         signupFeedback.innerHTML = `<i class='bi bi-exclamation-triangle-fill'></i> ${error.message}`
         signupForm.reset();
     })
-}
+};
+signupForm.addEventListener("submit", createUser);
 
-firebase.auth().onAuthStateChanged((user) => {
+
+//WriteUser in realtime
+async function createNewAccount() {
+    firebase.auth().onAuthStateChanged((user) => {
     if(user){
-        console.log(user)
+        var user = {
+            score: 0,
+            uid: user.uid,
+            email: user.email,
+        }
+        writeUserData(user);
+        getUserData(user.uid)
     }else{
         console.log("Unavailable user");
     }
-})
+});
+}
+
+function writeUserData(user) {
+    console.log("Write Data")
+    firebase.database().ref('users/' + user.uid).set(user).catch(error => {
+        console.log(error.message)
+    });
+}
+
+function getUserData(uid) {
+    console.log("Read");
+    var userRef = firebase.database().ref('users')
+    userRef.once("value", snap => {
+        console.log(snap.val());
+    })
+}
+
+
+window.onload = createNewAccount();
 
 
 //login
@@ -53,11 +85,11 @@ function loginUser(event){
         loginFeedback.style = "color: green";
         loginFeedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> login succeed!.";
         loginForm.reset();
-        location.replace("https://tic-tac-toe-airlines.web.app/player_lb.html");
+        
+        location.replace("./player_lb.html");
         setTimeout(() => {
             loginModal.hide();
         }, 1000)
-
     })
     .catch((error) => {
         console.log('invalid')
@@ -67,9 +99,10 @@ function loginUser(event){
     })
 }
 
-//logOut
-const btnLogout = document.querySelector("#btnLogout");
-btnLogout.addEventListener("click", function(){
-    firebase.auth().signOut();
-    console.log("Logout complete.");
-})
+
+
+
+
+
+
+

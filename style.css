@@ -60,7 +60,7 @@ body{
 }
 
 .home_main{
-    margin-top: 30vw;
+    margin-top: 17vw;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -100,11 +100,10 @@ button{
 
 }
 
-
 #airplane{
     width: 12%;
     left: 10vw;
-    top: 25vw;
+    top: 15vw;
     position: absolute;
 }
 
