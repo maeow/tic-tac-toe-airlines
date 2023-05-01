@@ -10,7 +10,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-  
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="lobby2_style.css">
+    <link rel="stylesheet" href="lobby_style.css">
     <script src="lobby.js"></script>
     <script src="auth_player.js"></script>
 
@@ -110,79 +109,21 @@
                 <h4> LEADERBOARD </h4>
                 <h5> ตารางจัดอันดับ </h5>
                 <center><table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">อันดับ</th>
-                        <th scope="col">ชื่อผู้ใช้</th>
-                        <th id="score" scope="col">คะแนน</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td id="username">Mark</td>
-
-                        <td id="score">500</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td id="username">Marilyn</td>
-
-                        <td id="score">400</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td id="username">Stephanie</td>
-
-                        <td id="score">300</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td id="username">Sabrina</td>
-
-                        <td id="score">200</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td id="username">Curt</td>
-
-                        <td id="score">100</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6</th>
-                        <td id="username">Copter</td>
-                        <td id="score">0</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7</th>
-                        <td id="username">Sawyer</td>
-
-                        <td id="score">0</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8</th>
-                        <td id="username">Anne</td>
-
-                        <td id="score">0</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">9</th>
-                        <td id="username">Amelyn</td>
-                        <td id="score">0</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">10</th>
-                        <td id="username">Elyseen</td>
-
-                        <td id="score">0</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">11</th>
-                        <td id="username">Aciel</td>
-                        <td id="score">0</td>
-                      </tr>
-                    </tbody>
-                  </table></center>
+                  <thead>
+                    <tr>
+                      <th scope="col">อันดับ</th>
+                      <th scope="col">ชื่อผู้ใช้</th>
+                      <th id="score" scope="col">คะแนน</th>
+                    </tr>
+                  </thead>
+                  <tbody id="scoreTable">
+                    <tr>
+                      <th>scope</th>
+                      <td>name</td>
+                      <td>score</td>
+                    </tr>
+                  </tbody>
+                </table></center>
             </div>
         </div>
     </div>
