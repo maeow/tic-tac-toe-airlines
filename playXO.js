@@ -9,6 +9,7 @@ var ai_o;
 var player_x;
 var available = ['A0', 'A1', 'A2','B0', 'B1', 'B2','C0', 'C1', 'C2']
 const country_link = (decodeURIComponent(window.location.search.replace(/^.*?\=/,''))).replaceAll('"',"")
+var country_list = ['fr', 'kr', 'usa', 'jp', 'th', 'uk'];
 const WINNING_COMBINATIONS = [
     ['A0', 'A1', 'A2'],
     ['B0', 'B1', 'B2'],
@@ -33,29 +34,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-// refRoomsCountry.once("value", data => {
-//     data = data.val()
-//     const currentUser = firebase.auth().currentUser
-//     let join = false;
-//     for (const playCountryID in data){
-//         const playCountryInfo = data[playCountryID];
-
-//         if(playCountryInfo["player-id"] == currentUser.uid){
-//             join = true;
-//             if(playCountryInfo["subLevel"] == "" || playCountryInfo["subLevel"] == undefined){
-//                 alert("pls choose place to playe game")
-//                 refRooms.child(room_id).remove()
-//                 window.location.href = "semi-level.html"
-//                 return
-//             }
-//         }
-//     }
-//     if(!join){
-//         alert("pls choose country to playe game")
-//         refRooms.child(room_id).remove()
-//         window.location.href = "level.html"
-//     }
-// })
 
 refRooms.on("value", data => {
     data = data.val()
@@ -103,30 +81,35 @@ refRooms.on("value", data => {
         }
         else if(data[room_id]["winner"] == currentUser.uid){
             $('#modalWin').modal('toggle')
-            // refRoomsCountry.once("value", data => {
-            //     data = data.val()
-            //     const currentUser = firebase.auth().currentUser
-            //     for (const playCountryID in data){
-            //         const playCountryInfo = data[playCountryID];
                     
-                    //  if(playCountryInfo["player-id"] == currentUser.uid){
                         let country = country_link.split("AND")[0].replace('"', '')
                         let sublevel = country_link.split("AND")[1].replace('"', '')
                         refUser.once("value", data => {
                             data = data.val()
 
                             for (const userID in data){
+                                let score_now = 0;
                                 const userInfo = data[userID];
                                  if(userInfo["uid"] == currentUser.uid){
                                     refUser.child(userID).child(country).update({
                                        [sublevel] : true,
                                     })
+
+                                    //เพิ่มคะแนน
+                                    for(let ct of country_list){
+                                        console.log(userInfo[ct]);
+                                         for(let ct_sp in userInfo[ct]){
+                                          if(userInfo[ct][ct_sp] == true){
+                                            score_now += 100;
+                                              refUser.child(userID).update({
+                                                "score" : score_now,
+                                              })
+                                            }
+                                         }
+                                      }
                                 }
                             }        
                         })
-                    // }
-            //     }        
-            // })
 
         }
         else if(data[room_id]["winner"] != currentUser.uid){

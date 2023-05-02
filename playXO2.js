@@ -10,6 +10,7 @@ var turn;
 var player_1_mark;
 var player_2_mark;
 const country_link = (decodeURIComponent(window.location.search.replace(/^.*?\=/,''))).replaceAll('"',"")
+var country_list = ['fr', 'kr', 'usa', 'jp', 'th', 'uk'];
 const WINNING_COMBINATIONS = [
     ['A0', 'A1', 'A2'],
     ['B0', 'B1', 'B2'],
@@ -132,11 +133,25 @@ refRooms.on("value", data => {
                 data = data.val()
 
                 for (const userID in data){
+                    let score_now = 0;
                     const userInfo = data[userID];
                     if(userInfo["uid"] == currentUser.uid){
                         refUser.child(userID).child(country).update({
                            [sublevel] : true,
                         })
+                        
+                        //เพิ่มคะแนน
+                        for(let ct of country_list){
+                            console.log(userInfo[ct]);
+                             for(let ct_sp in userInfo[ct]){
+                              if(userInfo[ct][ct_sp] == true){
+                                score_now += 100;
+                                  refUser.child(userID).update({
+                                    "score" : score_now,
+                                  })
+                                }
+                             }
+                          }
                     }
                 }        
             })

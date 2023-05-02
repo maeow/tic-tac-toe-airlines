@@ -13,32 +13,6 @@ const refUser = firebase.database().ref("users");
 var country_list = ['fr', 'kr', 'usa', 'jp', 'th', 'uk'];
 
 async function readAcc() {
-  console.log("read lobby");
-  refUser.once("value", data => {
-    data = data.val()
-    const currentUser = firebase.auth().currentUser
-    for (const userID in data){
-      let score_now = 0;
-        const userInfo = data[userID];
-         if(userInfo["uid"] == currentUser.uid){
-            for(let ct of country_list){
-              console.log(userInfo[ct]);
-               for(let ct_sp in userInfo[ct]){
-                if(userInfo[ct][ct_sp] == true){
-                  score_now += 100;
-                    refUser.child(userID).update({
-                      "score" : score_now,
-                    })
-                    document.getElementById("scoreText").innerHTML = score_now;
-                    console.log(score_now);
-                    console.log(userInfo['score']);
-                }
-               }
-            }
-        }
-    }        
-})
-
   firebase.auth().onAuthStateChanged((user) => {
   if(user){
     console.log(user)
@@ -55,7 +29,7 @@ async function readAcc() {
               // console.log(user.uid);
               // console.log("Match");
               document.getElementById("usernameText").innerHTML = username;
-              // document.getElementById("scoreText").innerHTML = score;
+              document.getElementById("scoreText").innerHTML = score;
 
               // console.log("Scoreboard");
               // console.log(score);
@@ -72,36 +46,7 @@ async function readAcc() {
                 ListID.push(userid);
                 ListPlayer.push(name);
                 ListScore.push(score);
-                // console.log(ListPlayer);
 
-                // var playerScore = new Array;
-                // for(let i = 0; i < ListScore.length; i++){
-                //   let score = ListScore[i];
-                //   let name = ListPlayer[i];
-                //   var arr = {
-                //       score : score, username : name
-                //   }
-          
-                //   playerScore = playerScore.concat(arr);
-                //   playerScore.sort();
-                // }
-                // playerScore.sort(function(a, b){return b.score - a.score});
-                // // console.log(playerScore);
-
-                // const newTable = document.createElement("tbody")
-                // newTable.innerHTML = "<thead></thead>"
-                // for(i of playerScore){
-                //   const newRow = document.createElement("tr");
-                //   const tdPlayer = document.createElement("td");
-                //   const tdScore = document.createElement("td");
-                //   tdPlayer.textContent = i.username;
-                //   tdScore.textContent = i.score;    
-                //   newRow.appendChild(tdPlayer);
-                //   newRow.appendChild(tdScore);
-                //   newTable.appendChild(newRow);
-                // }
-                // const target = document.getElementById('scoreTable');
-                // target.appendChild(newTable);
               })
               console.log(ListPlayer);
               var playerScore = new Array;
