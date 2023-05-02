@@ -3,6 +3,7 @@ const country = (decodeURIComponent(window.location.search.replace(/^.*?\=/,''))
 country.replaceAll('"')
 const refUser = firebase.database().ref("users");
 var country_list = {'fr' : "ประเทศฝรั่งเศส", 'kr':"ประเทศเกาหลี" , 'usa':"ประเทศฐอเมริกา" , 'jp':"ประเทศญี่ปุ่น", 'th':"ประเทศไทย", 'uk':"ประเทศอังกฤษ"};
+var lasttouch_top, lasttouch_left;
 
 if(screen.width < 1000){
   img.src = 'img/'+country.toUpperCase()+'_small.png';
@@ -92,9 +93,13 @@ img.addEventListener('load', function() {
 
             zIndex_pnt += 1;
             piece.style.zIndex = zIndex_pnt;
-            piece.style.left = (touchLocation.pageX-(pieceWidth/2)) + 'px';
-            piece.style.top = (touchLocation.pageY-(pieceHeight/2)) + 'px';
+            lasttouch_top  = (touchLocation.pageY-(pieceHeight/2));
+            lasttouch_left = (touchLocation.pageX-(pieceWidth/2))
+            piece.style.left = lasttouch_left + 'px';
+            piece.style.top = lasttouch_top + 'px';
           })
+          piece.addEventListener("touchstart", handleMouseDown);
+          piece.addEventListener("touchend", _destroy);
           
           ctxP.drawImage(img, x * pieceWidth, y * pieceHeight, pieceWidth, pieceHeight, 0, 0, pieceWidth, pieceHeight);
 
@@ -205,8 +210,12 @@ function _destroy(e) {
 }
 
 function snapPieces(piece1, piece2, e) {
+  // console.log(e)
   const piece2Rect = piece2.getBoundingClientRect();
-  if(e.clientX < piece2Rect.right && e.clientX > piece2Rect.left && e.clientY < piece2Rect.bottom && e.clientY > piece2Rect.top){
+  let com_con = e.clientX < piece2Rect.right && e.clientX > piece2Rect.left && e.clientY < piece2Rect.bottom && e.clientY > piece2Rect.top;
+  let phone_com = lasttouch_left < piece2Rect.right && lasttouch_left > piece2Rect.left && lasttouch_top < piece2Rect.bottom && lasttouch_top > piece2Rect.top;
+  
+  if(com_con || phone_com){
     piece1.style.left = piece2.style.left;
     piece1.style.top = piece2.style.top;
     piece1.style.boxShadow = "none";
