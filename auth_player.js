@@ -128,13 +128,6 @@ async function alreadyLogin() {
     if(user){
         alert('already login')
         window.location.href = 'player_lb.html'
-        // var user = {
-        //     score: 0,
-        //     uid: user.uid,
-        //     email: user.email,
-        // }
-        // writeUserData(user);
-        // getUserData(user.uid)
     }else{
         console.log("Unavailable user");
     }

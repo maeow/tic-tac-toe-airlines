@@ -130,35 +130,43 @@ refRooms.on("value", data => {
             $('#modalTie').modal('toggle')
         }
         else if(data[room_id]["winner"] == currentUser.uid){
-            $('#modalWin').modal('toggle')
             let country = country_link.split("AND")[0].replace('"', '')
             let sublevel = country_link.split("AND")[1].replace('"', '')
-                refUser.once("value", data => {
+            refUser.once("value", data => {
                 data = data.val()
 
-                for (const userID in data){
-                    let score_now = 0;
-                    const userInfo = data[userID];
-                    if(userInfo["uid"] == currentUser.uid){
-                        refUser.child(userID).child(country).update({
-                           [sublevel] : true,
-                        })
+                let score_now = 0;
+                const userInfo = data[currentUser.uid];
 
-                        //เพิ่มคะแนน
-                        for(let ct of country_list){
-                            console.log(userInfo[ct]);
-                             for(let ct_sp in userInfo[ct]){
-                              if(userInfo[ct][ct_sp] == true){
-                                score_now += 100;
-                                  refUser.child(userID).update({
-                                    "score" : score_now,
-                                  })
-                                }
-                             }
-                          }
+                for(let ct of country_list){
+                    console.log(userInfo[ct]);
+                    for(let ct_sp in userInfo[ct]){
+                       if(userInfo[ct][ct_sp] == true){
+                            score_now += 100;
+                        }
                     }
-                }        
+                }
+                if(userInfo[country][sublevel] == false){
+                    score_now += 100;
+                }
+                refUser.child(currentUser.uid).update({
+                    "score" : score_now,
+                    [country] : {
+                        "subplace1" : userInfo[country]["subplace1"],
+                        "subplace2" : userInfo[country]["subplace2"],
+                        "subplace3" : userInfo[country]["subplace3"],
+                        "subplace4" : userInfo[country]["subplace4"],
+                        "subplace5" : userInfo[country]["subplace5"],
+                        "subplace6" : userInfo[country]["subplace6"],
+                        "subplace7" : userInfo[country]["subplace7"],
+                        "subplace8" : userInfo[country]["subplace8"],
+                        "subplace9" : userInfo[country]["subplace9"],
+                        [sublevel] : true,
+                    }
+                })   
             })
+            $('#modalWin').modal('toggle')
+            return
         }
         else if(data[room_id]["winner"] != currentUser.uid){
             $('#modalLose').modal('toggle')

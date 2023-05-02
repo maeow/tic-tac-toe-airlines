@@ -25,16 +25,10 @@ async function readAcc() {
               let score = snapshot.child(id).child("score").val();
               let username = snapshot.child(id).child("username").val();
               let profile_num = snapshot.child(id).child("profile-number").val();
-              // console.log(id);
-              // console.log(score);
-              // console.log(user.uid);
-              // console.log("Match");
+
               document.querySelector('.userphoto').src = "profile/avatar-"+profile_num+".png"
               document.getElementById("usernameText").innerHTML = username;
               document.getElementById("scoreText").innerHTML = score;
-
-              // console.log("Scoreboard");
-              // console.log(score);
 
               var namebuff = "";
               let ListPlayer = [],
@@ -64,7 +58,6 @@ async function readAcc() {
                   playerScore.sort();
                 }
                 playerScore.sort(function(a, b){return b.score - a.score});
-                // console.log(playerScore);
 
                 
                 // newTable.innerHTML = "<thead></thead>"
@@ -98,7 +91,7 @@ async function readAcc() {
 
                 }
                 
-                
+                return
             }
           });
         });
@@ -106,42 +99,8 @@ async function readAcc() {
         console.log("Unavailable user");
       }
 
-  // console.log("Scoreborad");
-
 
 });
 }
 
 window.onload = readAcc();
-
-
-
-
-// firebase.auth().onAuthStateChanged((user) => {
-//     if(user){
-//         console.log(user.uid)
-//     }else{
-//         console.log("Unavailable user");
-//     }
-// });
-
-// let addUserList = () => {
-//     const score = 0;
-//     firebase.auth().onAuthStateChanged((user) => {
-//         if(user){
-//             const userid = firebase.auth().currentUser;
-//             if (userid != "") {
-//                 const email = user.email;
-//                 const uid = user.uid;
-//                 console.log(email);
-//                 console.log(uid);
-//                 console.log(score);
-//                 document.getElementById("usernameText").innerHTML = email;
-
-//             }
-//         }else{
-//             console.log("Unavailable user");
-//         }
-//         });
-// };
-// window.onload = addUserList();
