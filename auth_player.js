@@ -9,7 +9,7 @@ function createUser(event){
     event.preventDefault();
     const email = signupForm["input-email-signup"].value;
     const password = signupForm["input-password-signup"].value;
-    const userRef = firebase.database().ref("UserList");
+    const userRef = firebase.database().ref("users");
     const score = 0;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -17,8 +17,87 @@ function createUser(event){
         console.log("signup")
         signupFeedback.style = "color: green";
         signupFeedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> signup completed.";
-        writeUserData(user)
         signupForm.reset();
+
+        const user = firebase.auth().currentUser;
+        var user_data = {
+            score: 0,
+            uid: user.uid,
+            email: user.email,
+            "kr": {
+                    "completed_jigsaw" : false,
+                    'subplace1' : false,
+                    'subplace2' : false,
+                    'subplace3' : false,
+                    'subplace4' : false,
+                    'subplace5' : false,
+                    'subplace6' : false,
+                    'subplace7' : false,
+                    'subplace8' : false,
+                    'subplace9' : false,
+                },
+                "usa": {
+                    "completed_jigsaw" : false,
+                    'subplace1' : false,
+                    'subplace2' : false,
+                    'subplace3' : false,
+                    'subplace4' : false,
+                    'subplace5' : false,
+                    'subplace6' : false,
+                    'subplace7' : false,
+                    'subplace8' : false,
+                    'subplace9' : false,
+                },
+                "fr": {
+                    "completed_jigsaw" : false,
+                    'subplace1' : false,
+                    'subplace2' : false,
+                    'subplace3' : false,
+                    'subplace4' : false,
+                    'subplace5' : false,
+                    'subplace6' : false,
+                    'subplace7' : false,
+                    'subplace8' : false,
+                    'subplace9' : false,
+                },
+                "th": {
+                    "completed_jigsaw" : false,
+                    'subplace1' : false,
+                    'subplace2' : false,
+                    'subplace3' : false,
+                    'subplace4' : false,
+                    'subplace5' : false,
+                    'subplace6' : false,
+                    'subplace7' : false,
+                    'subplace8' : false,
+                    'subplace9' : false,
+                },
+                "jp": {
+                    "completed_jigsaw" : false,
+                    'subplace1' : false,
+                    'subplace2' : false,
+                    'subplace3' : false,
+                    'subplace4' : false,
+                    'subplace5' : false,
+                    'subplace6' : false,
+                    'subplace7' : false,
+                    'subplace8' : false,
+                    'subplace9' : false,
+                },
+                "uk": {
+                    "completed_jigsaw" : false,
+                    'subplace1' : false,
+                    'subplace2' : false,
+                    'subplace3' : false,
+                    'subplace4' : false,
+                    'subplace5' : false,
+                    'subplace6' : false,
+                    'subplace7' : false,
+                    'subplace8' : false,
+                    'subplace9' : false,
+                },
+        };
+        writeUserData(user_data);
         setTimeout(() => {
             signupModal.hide();
         }, 1000)
@@ -35,16 +114,18 @@ signupForm.addEventListener("submit", createUser);
 
 
 //WriteUser in realtime
-async function createNewAccount() {
+async function alreadyLogin() {
     firebase.auth().onAuthStateChanged((user) => {
     if(user){
-        var user = {
-            score: 0,
-            uid: user.uid,
-            email: user.email,
-        }
-        writeUserData(user);
-        getUserData(user.uid)
+        alert('already login')
+        window.location.href = 'player_lb.html'
+        // var user = {
+        //     score: 0,
+        //     uid: user.uid,
+        //     email: user.email,
+        // }
+        // writeUserData(user);
+        // getUserData(user.uid)
     }else{
         console.log("Unavailable user");
     }
@@ -68,7 +149,7 @@ function getUserData(uid) {
 }
 
 
-window.onload = createNewAccount();
+window.onload = alreadyLogin();
 
 
 //login
@@ -108,16 +189,3 @@ function logout(){
         console.log(user.uid);
     });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-

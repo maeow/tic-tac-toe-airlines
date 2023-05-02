@@ -1,0 +1,183 @@
+body{
+        background-color: #FFEFE7;
+        font-family: 'IBM Plex Sans Thai', sans-serif;
+        height: 100vh;
+        min-height: 100vh;
+    }
+    .container-fluid{
+        position: relative;
+        overflow-y: hidden;
+        min-height: 100vh;
+    }
+
+    #top-right{
+        position: absolute;
+        width: 40%;
+        right: 0px;
+    }
+    #bottom{
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        bottom: 0;
+        animation : translate 4s ease-in-out infinite;
+        /* bottom: -10vh; */
+    }
+    @keyframes translate {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(20px);}
+    100% {transform: translateY(0px);}
+    }
+
+    h4{
+        font-weight: 600;
+        font-size: 1.75rem;
+        text-align: center;
+        color: #10366D;
+    }
+    h5{
+        font-weight: 600;
+        font-size: 1.25rem;
+        text-align: center;
+        color: #10366D;
+    }
+    h6{
+        font-size: 1rem;
+        color: #10366D;
+    }
+    #topic{
+        
+        padding-top: 6vh;
+    }
+
+    .button{
+        font-weight: 500;
+        font-size: 1.5vw;
+        color: #10366D;
+        position: absolute;
+        display: inline-block;
+        left: 2.5vh;
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        text-decoration: none;
+        transition:  0.15s ease-out;
+    }
+    .button:hover{
+        color: #ADC9FF;
+        text-decoration: none;
+    }
+    i{
+        position: relative;
+        top: -.5vw;
+        left: 0px;
+    }
+
+    #grid{
+        position: relative;
+        margin-top: 5vh;
+        width: 80vw;
+        height: auto;
+        background-color: white;
+        border-radius: 3vw;
+        box-shadow: 12px 13px 23px #00000053;
+        
+    }
+    .modal{
+        font-family: 'ibm plex sans thai', 'sans serif';
+        font-weight: 500;
+    }
+    .modal-footer,.modal-header{
+        border: 0;
+    }
+    .modal-body{
+        color: black;
+        /* margin-top: 2rem; */
+        font-size: 1.25rem;
+    }
+    span > #text-modal{
+        margin-top: 0.5rem;
+        color: black;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    
+    .bi{
+        font-size: 2rem;
+    }
+    
+ 
+    @media only screen and (max-width: 1300px) {
+        h4{
+            font-size: 1.5rem;
+        }
+        h5{
+            font-size: 1.25rem;
+        }
+       
+    }
+    @media only screen and (max-width: 1055px) {
+        
+        
+    }
+    @media only screen and (max-width: 915px) {
+
+        .container-fluid{
+        padding-bottom: 10vh;
+    }
+
+
+    .button{
+        font-size: 5vw;
+        margin-left: 3vw;
+        }
+}
+@media only screen and (max-width: 768px) {
+    #container-table{
+        width: 100%;
+    }
+    span{
+        display: inline-block;
+        text-align: left;
+        justify-content: left;
+    }
+    span > #player,span > #display-name{
+        text-align: left;
+    }
+}
+
+    @media only screen and (max-width: 676px) {
+
+    }
+    @media only screen and (max-width: 475px) {
+        
+    h4{
+        font-size: 1.25rem;
+    }
+    h5{
+        font-size: 1rem;
+    }
+    #top-right{
+        width: 60%;
+    }
+    .button{
+        font-size: 5vw;
+        margin-left: 0;
+    }
+    }
+    @media only screen and (max-width: 375px) {
+        
+        .button{
+            font-size: 1.5rem;
+            margin-left: -1rem;
+        }
+    }
+    @media only screen and (max-width: 280px) {
+        h4,.button{
+            font-size: 1.25rem;
+        }
+        h5{
+            font-size: 1rem;
+        }
+    }

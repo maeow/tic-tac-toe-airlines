@@ -96,20 +96,17 @@ body{
         top: 60vh;
         left: 50vh;
     }
-
     #lb_star1{
         width: 3vh;
         top: 0;
         left: 5vh;
     }
-
     #lb_star2{
         width: 3vh;
         top: 5vh;
         left: 72vh;
         z-index: -1000;
     }
-
     #lb_circle3{
         width: 5vh;
         top: 75vh;

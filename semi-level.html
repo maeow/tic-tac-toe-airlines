@@ -11,6 +11,12 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Choose Place</title>
+
+    
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap');
@@ -45,40 +51,40 @@
                 
                 <center><div class="carousel-inner">
                   <div class="carousel-item active 1">
-                    <span class="dot" ><img id="place" src="img-miew/landmark/colosseum.svg" alt="First slide">
+                    <span class="dot" id="subplace1" onclick="subplace('subplace1')" ><img id="place" src="img-miew/landmark/colosseum.svg" alt="First slide">
                       <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 2">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/golden-gate-bridge 1.svg" alt="Second slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace2" onclick="subplace('subplace2')"><img id="place" src="img-miew/landmark/golden-gate-bridge 1.svg" alt="Second slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 3">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/gyeongbokgung-palace (4).svg" alt="Third slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace3" onclick="subplace('subplace3')"><img id="place" src="img-miew/landmark/gyeongbokgung-palace (4).svg" alt="Third slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 4">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/landmark.svg" alt="Fourth slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace4" onclick="subplace('subplace4')"><img id="place" src="img-miew/landmark/landmark.svg" alt="Fourth slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 5">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/moai (1).svg" alt="Fifth slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace5" onclick="subplace('subplace5')"><img id="place" src="img-miew/landmark/moai (1).svg" alt="Fifth slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 6">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/moai.svg" alt="Sixth slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace6" onclick="subplace('subplace6')"><img id="place" src="img-miew/landmark/moai.svg" alt="Sixth slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 7">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/mosque.svg" alt="Seven slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace7" onclick="subplace('subplace7')"><img id="place" src="img-miew/landmark/mosque.svg" alt="Seven slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 8">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/national-assembly.svg" alt="Eigth slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace8" onclick="subplace('subplace8')"><img id="place" src="img-miew/landmark/national-assembly.svg" alt="Eigth slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                   <div class="carousel-item 9">
-                    <span class="dot"><a href="/tictactoe/choose-player.html"><img id="place" src="img-miew/landmark/pisa.svg" alt="Nine slide">
-                      <h4 class="arrive">สำรวจแล้ว~</h4></a></span>
+                    <span class="dot" id="subplace9" onclick="subplace('subplace9')"><img id="place" src="img-miew/landmark/pisa.svg" alt="Nine slide">
+                      <h4 class="arrive">สำรวจแล้ว~</h4></span>
                   </div>
                 </div></center>
                 <ol class="carousel-indicators">
@@ -102,9 +108,38 @@
                   <span class="sr-only">Next</span>
                 </a>
               </div>
-              <center><button type="button" class="btn">ต่อจิ๊กซอว์เพื่อค้นพบประเทศ!</button></center>
+              <center><button type="button" id="goToJigsaw" class="btn" onclick="jigsaw()">ต่อจิ๊กซอว์เพื่อค้นพบประเทศ!</button></center>
         </div>
     </div>
+    <!-- <script>
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+    apiKey: "AIzaSyDGWKrQ6f051YhxHTwo8MjPSBMkflPUHgA",
+    authDomain: "matchmaker-test-47ed7.firebaseapp.com",
+    databaseURL: "https://matchmaker-test-47ed7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "matchmaker-test-47ed7",
+    storageBucket: "matchmaker-test-47ed7.appspot.com",
+    messagingSenderId: "701848303662",
+    appId: "1:701848303662:web:57df471d23c786982047bf",
+    measurementId: "G-63JCMJ3QVV"
+  };
+  firebase.initializeApp(firebaseConfig)
+    </script> -->
+    <script>
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDJtYUHXcixCILb19wIvSisWdByixqu-8I",
+        authDomain: "tic-tac-toe-airlines.firebaseapp.com",
+        databaseURL: "https://tic-tac-toe-airlines-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "tic-tac-toe-airlines",
+        storageBucket: "tic-tac-toe-airlines.appspot.com",
+        messagingSenderId: "478588820501",
+        appId: "1:478588820501:web:ad3e5fa3af5c05bbe7421c",
+        measurementId: "G-FCMED4Y7RB"
+      };
+      firebase.initializeApp(firebaseConfig)
+        </script>
     <script src="script.js"></script>
+    <script src="semiLevel.js"></script>
 </body>
 </html>
