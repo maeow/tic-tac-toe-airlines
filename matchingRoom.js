@@ -177,3 +177,11 @@ refRooms.on("value", (data) => {
     }
 })
 
+window.addEventListener("load", (event) => {
+    if(!country || !country.split("AND")[1]){
+        alert('Pls choose country')
+        setTimeout(function(){
+            window.location.href = "level.html"
+        }, 1000);
+    }
+  });

@@ -54,3 +54,12 @@ refUser.once("value", data => {
 function jigsaw(){
     window.location.href = "playJigsaw.html?data="+country;
 }
+
+window.addEventListener("load", (event) => {
+    if(!country){
+        alert('Pls choose country')
+        setTimeout(function(){
+            window.location.href = "level.html"
+        }, 1000);
+    }
+  });
