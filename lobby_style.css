@@ -129,7 +129,7 @@ td{
 }
 
 .container{
-    min-width: 326px;
+
     background-color: rgb(255, 255, 255);
     padding-top: 1.5vw;
     padding-bottom: 1.5vw;
@@ -171,9 +171,9 @@ thead{
     background-color: #AAC6FB;
     margin-top: 2vw;
     color: #284673;
-    width: 150px;
-    border-radius: 2vw;
-    font-size: 20px;
+    /* width: 150px; */
+    border-radius: 2rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 .btn:hover{

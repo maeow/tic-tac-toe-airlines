@@ -65,6 +65,7 @@
 }
 .board{
   padding-top: 0rem;
+  padding-bottom: 5rem;
 }
 *[class^="stamp"]{
   width: 3.5vw;
@@ -98,12 +99,34 @@
   font-size: 1.5rem;
 }
 .group-button{
+  
   /* width: 10%; */
+  /* position: absolute;
+  left: 18vw;
+  top: 25vw; */
   display: flex;
   text-align: center;
   justify-content: center;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+.group-button1{
+  
+  width: 25%;
+  /* position: absolute;
+  left: 18vw;
+  top: 25vw; */
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+.group-button1 > *{
+  display: none;
 }
 
 @media only screen and (max-width: 1067px) {
@@ -133,13 +156,22 @@
     h5{
       font-size: 1rem;
     }
+    .group-button{
+      display: none;
+    }
+    .group-button1 > *{
+  display: block;
+}
 }
 @media only screen and (max-width: 915px) {
     #in-card{
-      font-size: 3vw;
+      font-size: 1.5rem;
     }
     .card-subtitle{
-      font-size: 2.5vw;
+      font-size: 1.25rem;
+    }
+    .card-text{
+      font-size: 1.25rem;
     }
     .card{
       width: auto;
@@ -157,7 +189,7 @@
 }
 @media only screen and (max-width: 767px) {
   .card-text{
-      font-size: 4vw;
+      font-size: 1rem;
     }
     h4{
     font-size: 4vw;
@@ -165,10 +197,13 @@
 }
 @media only screen and (max-width: 440px) {
   .card-text{
-      font-size: 1.75vw;
+      font-size: 1.25rem;
   }
+  .card-subtitle{
+      font-size: 0.9rem;
+    }
   h4{
-    font-size: 1.75vw;
+    font-size: 1.75rem;
   }
 }
 
@@ -177,20 +212,32 @@
         font-size: 1rem;
         width: 15em;
     }
+    #in-card{
+      font-size: 1rem;
+    }
+    .card-subtitle{
+      font-size: 0.75rem;
+    }
     h4,.button{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     h5{
-        font-size: 1.25rem;
+        font-size: 0.5rem;
     }
 }
 
-@media only screen and (max-width: 280px) {
+@media only screen and (max-width: 336px) {
     h4,.button{
         font-size: 1rem;
     }
     h5,th{
         font-size: 0.75rem;
+    }
+    .card-text{
+      font-size: 0.75rem;
+    }
+    .card-subtitle{
+      font-size: 0.5rem;
     }
 }
 
@@ -238,7 +285,7 @@
                   </div>
                   <div class="row">
                       <div class="col-4 d-flex flex-column align-items-center">
-                        <img class="userphoto" src="https://sv1.picz.in.th/images/2023/04/04/mg5TWk.png" width="184" alt="mg5TWk.png" border="0" />
+                          <img class="userphoto" src="https://sv1.picz.in.th/images/2023/04/04/mg5TWk.png" alt="mg5TWk.png" border="0" />
                           <h5 style="padding-top: 1vw;"id="in-card"><div id="rank">อันดับที่ </div></h5>
                       </div>
                       <div class="col-8">
@@ -284,7 +331,11 @@
             </div> 
             
         </div>
-       
+        <center><div class="group-button">
+          <a href="./level.html" class="btn" role="button">เล่นเกมเล้ย!</a></button>
+           <a href="./howtoplay.html" class="btn" role="button">วิธีเล่น</a></button>
+           <button type="button" onclick="logout()" class="btn" >ออกจากระบบ</button>
+         </div></center>
     </div>
     <div class="col-1 scoretable"></div>
     <div class="col-12 col-sm-10 col-md-8 col-lg-5 scoretable">
@@ -299,26 +350,19 @@
                 <th scope="col">คะแนน</th>
               </tr>
             </thead>
-            <tbody id="scoreTable">
-              <!-- <tr>
-                <th scope="col">scope</th>
-                <td scope="col">name</td>
-                <td>score</td>
-              </tr> -->
-            </tbody>
           </table></center>
       </div>
   </div>
-  <div class="row bt">
-    <div class="col">
-       <center><div class="group-button">
+  <!-- <div class="row bt"> -->
+    <!-- <div class="col"> -->
+       <center><div class="group-button1">
        <a href="./level.html" class="btn" role="button">เล่นเกมเล้ย!</a></button>
         <a href="./howtoplay.html" class="btn" role="button">วิธีเล่น</a></button>
         <button type="button" onclick="logout()" class="btn" >ออกจากระบบ</button>
       </div></center>
-    </div>
-    <div class="col"></div>
-  </div>
+    <!-- </div> -->
+    <!-- <div class="col"></div> -->
+  <!-- </div> -->
  
     </div>
     
