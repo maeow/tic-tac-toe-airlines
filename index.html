@@ -25,6 +25,79 @@
   <script src="lobby.js"></script>
 
 </head>
+<style>
+  body{
+      background-color: #284673;
+      font-family: 'IBM Plex Sans Thai', sans-serif;
+      
+      /* height: 100vh; */
+      min-height: 100vh;
+  }
+  .container-fluid{
+      overflow-y: hidden;
+      position: relative;
+      min-height: 100vh;
+  }
+    .modal-title{
+      font-size: 2rem;
+      text-align: center;
+      /* margin-left: 6rem; */
+    }
+    .modal-body{
+      font-size: 1.25rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  
+    #btnLogin:hover,.btn:hover{
+      background-color: #FFE3ED;
+      color: #284673;
+    }
+    #btnSignup:hover{
+      border-color: #FFE3ED;
+      color: #FFE3ED;
+    }
+    .btn{
+      margin-top: 1.25rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      background-color: #284673;
+      color: white;
+      border-radius: 5rem;
+      padding-bottom: 1vw;
+      padding-top: 0.5vw;
+    }
+    *[id^='feedback']{
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    #feedback-msg-signup{
+      margin-top: 1rem;
+    }
+  
+    @media only screen and (max-width: 520px) {
+  
+      .btn{
+        font-size: 5vw;
+      }
+    }
+    @media only screen and (max-width: 310px) {
+      .modal-body{
+      font-size: 1.25rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+      .modal-title{
+        font-size: 10vw;
+      }
+      .btn{
+        width: auto;
+        font-size: 5vw;
+      }
+    }
+    
+  </style>
 <body>
     <div class="container-fluid">
 
@@ -73,53 +146,55 @@
           </div>
   
           <!-- Login -->
-    <div class="modal" id="modal-login" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">เข้าสู่ระบบ</h5>
-            <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form action="" class="" id="login-form">
-              <p>ชื่อผู้ใช้งาน :</p>
-              <div class="input-group loginInput">
-                <span class="input-group-append">
-                  <i class="bi bi-person-fill loginIcon"></i>
-                </span>
-                <input type="text" class="boxInput" id="input-email-login" placeholder="กรอกชื่อผู้ใช้งาน" required>
-              </div>
-              <p></p>
-              <p>รหัสผ่าน :</p>
-              <div class="input-group loginInput">
-                <span class="input-group-append">
-                  <i class="bi bi-lock-fill loginIcon"></i>
-                </span>
-                <input type="password" class="boxInput" id="input-password-login" placeholder="กรอกรหัสผ่าน" required>
+          <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content ">
+                <div class="modal-header mx-3 text-center">
+                  <h5 class="modal-title w-100 text-center">เข้าสู่ระบบ</h5>
+                  <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mx-3">
+                  <form action="" class="" id="login-form">
+                    <p>ชื่อผู้ใช้งาน :</p>
+                    <div class="input-group loginInput">
+                      <span class="input-group-append">
+                        <i class="bi bi-person-fill loginIcon"></i>
+                      </span>
+                      <input type="text" class="boxInput form-control" id="input-email-login" placeholder="กรอกชื่อผู้ใช้งาน" required>
+                    </div>
+                    <p></p>
+                    <p>รหัสผ่าน :</p>
+                    <div class="input-group loginInput">
+                      <span class="input-group-append">
+                        <i class="bi bi-lock-fill loginIcon"></i>
+                      </span>
+                      <input type="password" class="boxInput form-control" id="input-password-login" placeholder="กรอกรหัสผ่าน" required>
+                      
+                    </div>
+                    <center><button type="submit" class="btn text-center loginBtn">เข้าสู่ระบบ</button>
+                    </center><!-- <div class="loginBtn1"> -->
+                      <!-- <button type="submit" class="loginBtn">เข้าสู่ระบบ</button> -->
+                    <!-- </div> -->
+                  </form>
+                </div>
+                <div class="modal-footer mx-3">
+                  <p>ยังไม่มีรหัสผ่าน ?</p>
+                  <a href="#" class="logged-out" data-bs-toggle="modal" data-bs-target="#modal-signup">ลงทะเบียนเลย !</a>
+                </div>
                 <p id="feedback-msg-login"></p>
               </div>
-              <div class="loginBtn1">
-                <button type="submit" class="loginBtn">เข้าสู่ระบบ</button>
-              </div>
-            </form>
+            </div>
           </div>
-          <div class="modal-footer">
-            <p>ยังไม่มีรหัสผ่าน ?</p>
-            <a class="logged-out" data-bs-toggle="modal" data-bs-target="#modal-signup">ลงทะเบียนเลย !</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Signup -->
-    <div class="modal" id="modal-signup" tabindex="-1">
+    <div class="modal fade" id="modal-signup" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">ลงทะเบียน</h5>
+          <div class="modal-header mx-3 text-center">
+            <h5 class="modal-title w-100 text-center">ลงทะเบียน</h5>
             <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body mx-3">
             <form action="" class="" id="signup-form">
               <p>ชื่อผู้ใช้งาน :</p>
               <div class="input-group signupInput">
@@ -134,19 +209,23 @@
                 <span class="input-group-append">
                   <i class="bi bi-lock-fill signupIcon"></i>
                 </span>
-                <input type="password" class="boxInput" id="input-password-signup" placeholder="กรอกรหัสผ่าน" required>
-                <p id="feedback-msg-signup"></p>
+                <input type="password" class="boxInput form-control" id="input-password-signup" placeholder="กรอกรหัสผ่าน" required>
+                
               </div>
-              <div class="signupBtn1">
+              <center><button type="submit" class="btn text-center signupBtn">ลงทะเบียน</button>
+              </center>
+              <p id="feedback-msg-signup"></p>
+              <!-- <div class="signupBtn1">
                 <button type="submit" class="signupBtn">ลงทะเบียน</button>
-              </div>
+              </div> -->
             </form>
           </div>
+          <div class="modal-footer mx-3"></div>
         </div>
       </div>
     </div>
-      </div>
-  <script>
+  </div>
+<script>
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJtYUHXcixCILb19wIvSisWdByixqu-8I",

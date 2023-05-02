@@ -19,6 +19,8 @@ body{
     top:0px;
     animation : translate-star 1.25s ease-in-out ;
 }
+
+
 #top-right{
     position: absolute;
     width: 40%;
@@ -53,6 +55,7 @@ h4{
     text-align: center;
     color: white;
 }
+
 h5{
     font-size: 1.25vw;
     text-align: center;
