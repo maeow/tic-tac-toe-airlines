@@ -1,83 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic Tac Toe Airlines</title>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="howtoplay.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style-level.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <title>Choose Country</title>
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap');
+
+    /* #row-two > .col:nth-last-child(-n+3)  #country1-1, #row-two > .col:nth-last-child(-n+3)  #country2-2{
+        color: #284673;
+    } */
+    .how{
+        text-align:start;
+        font-weight: 800;
+        color: #284673;
+        padding: 5vw;
+        line-height: 45px;
+    }
+
+
+    #grid{
+    background-color: white;
+    position: relative;
+    margin-top: 2rem;
+    border-radius: 5rem;
+    }
+
+    #bottom-level{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0;
+    animation : translate 4s ease-in-out infinite;
+    }
+    @media only screen and (max-width: 980px) {
+    #grid{
+    padding-bottom: 5rem;
+    }
+    /* #row-two > .col:nth-last-child(-n+3)  #country1-1, #row-two > .col:nth-last-child(-n+3)  #country2-2{
+        color: white;
+    } */
+}
+
+
+
+
+    
+</style>
 <body>
-
-    <div class="wrap-all">
-        <img src="img/cloud6.svg" id="cloud6">
-        <img src="img/cloud7.svg" id="cloud7">
-        <img src="img/wave1.svg" class="wave">
-        <img src="img/wave2.svg" class="wave">
-        <img src="img/wave3.svg" class="wave">
-        <img src="img/starline1.svg" id="starline1">
-        <img src="img/starline2.svg" id="starline2">
-
-        <div class="wrap-head">
-            <div class="row">
-                <div class="col-3 backpage">
-                    <a href="./player_lb.html" class="btn" role="button"><i class="bi bi-chevron-left"></i>ย้อนกลับ</a>
-                </div>
-                <dvi class="col-6 title">
-                    <h4>HOW TO PLAY</h4>
-                    <h5>วิธีเล่น</h5>
-                </dvi>
-            </div>
+    
+    <div class="container-fluid">
+        <!-- <img id="top" src="img-miew/top.svg"> -->
+        <img id="star" src="img-miew/star.svg">
+        <img id="top-right" src="img-miew/top-right.svg">
+        <img id="bottom-level" src="img-miew/bottom2.svg">
+        
+        <div id="topic" class="container">
+            <a class="button" href="player_lb.html"><i class="bi bi-chevron-left"></i>ย้อนกลับ</a>
+            <h4>HOW TO PLAY TIC-TAC-TOE AIRLINES</h4>
+            <h5>วิธีเล่นเกม</h4>
         </div>
 
-        <div class="wrap-content">
-            <div class="row">
-                <div class="card-body">
-                    <p>1. เลือกประเทศที่ต้องการสำรวจ</p>
-                    <p>2. เลือกด่านย่อย</p>
-                    <p>3. เล่น XOXO</p>
-                    <p>4. สะสมจิ๊กซอว์</p>
-                    <p>5. นำจิ๊กซอว์มาต่อเพื่อค้นพบประเทศ</p>
-                    <p>6. เย่ ไปเล่นต่อกันเล้ย</p>
-                </div>
-            </div>
+        <div id="grid" class="container">
+            <h5 class="how to">1. เลือกประเทศที่ต้องการสำรวจ<br>
+                2. เลือกด่านย่อย<br>
+                3. เล่น XOXO<br>
+                4. สะสมจิ๊กซอว์<br>
+                5. นำจิ๊กซอว์มาต่อเพื่อค้นพบประเทศ<br>
+                6. เย่ ไปเล่นต่อกันเล้ย</h5>
+            
         </div>
     </div>
-
-
-
-    <!-- Firebase -->
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyDJtYUHXcixCILb19wIvSisWdByixqu-8I",
-      authDomain: "tic-tac-toe-airlines.firebaseapp.com",
-      databaseURL: "https://tic-tac-toe-airlines-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "tic-tac-toe-airlines",
-      storageBucket: "tic-tac-toe-airlines.appspot.com",
-      messagingSenderId: "478588820501",
-      appId: "1:478588820501:web:ad3e5fa3af5c05bbe7421c",
-      measurementId: "G-FCMED4Y7RB"
+    <!-- <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+      apiKey: "AIzaSyDGWKrQ6f051YhxHTwo8MjPSBMkflPUHgA",
+      authDomain: "matchmaker-test-47ed7.firebaseapp.com",
+      databaseURL: "https://matchmaker-test-47ed7-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "matchmaker-test-47ed7",
+      storageBucket: "matchmaker-test-47ed7.appspot.com",
+      messagingSenderId: "701848303662",
+      appId: "1:701848303662:web:57df471d23c786982047bf",
+      measurementId: "G-63JCMJ3QVV"
     };
     firebase.initializeApp(firebaseConfig)
-  </script>
-  <!-- auth -->
-  <script src="auth_player.js"></script>
+      </script> -->
+      <script>
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyDJtYUHXcixCILb19wIvSisWdByixqu-8I",
+          authDomain: "tic-tac-toe-airlines.firebaseapp.com",
+          databaseURL: "https://tic-tac-toe-airlines-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "tic-tac-toe-airlines",
+          storageBucket: "tic-tac-toe-airlines.appspot.com",
+          messagingSenderId: "478588820501",
+          appId: "1:478588820501:web:ad3e5fa3af5c05bbe7421c",
+          measurementId: "G-FCMED4Y7RB"
+        };
+        firebase.initializeApp(firebaseConfig)
+          </script>
+    <script src="script.js"></script>
+    <script src="level.js"></script>
 </body>
 </html>
