@@ -94,7 +94,7 @@ function updateFindMatchContent(cmd, room={}){
     
             let count = 5;
             const countGoToRoom = setInterval(() => {
-                findct.innerHTML = '<span><b>พบคู่แข่งแล้ว!</b> <br><h5>รอสักครู่ เรากำลังพาคุณไปยังห้องเล่น!</h5></span>'
+                findct.innerHTML = '<i class="bi bi-person-bounding-box" style="color: black;"></i><span><b>พบคู่แข่งแล้ว!</b> <br><h5>รอสักครู่ เรากำลังพาคุณไปยังห้องเล่น!</h5></span>'
                 $('#modalFindRoom').modal('show')
                 count--;
                 if (count == 0){
