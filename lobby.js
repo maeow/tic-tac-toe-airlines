@@ -43,6 +43,13 @@ async function readAcc() {
                 ListPlayer.push(name);
                 ListScore.push(score);
 
+                if(userid["uid"] == currentUser.uid){
+                  for(let ct of country_list){
+                    if(userid[ct]["completed_jigsaw"] == true){
+                      document.getElementById(ct).style.visibility = "visible"
+                    }
+                  }
+                }
               })
               console.log(ListPlayer);
               var playerScore = new Array;
@@ -78,7 +85,7 @@ async function readAcc() {
                     newTable.appendChild(tdscope);
                     newTable.appendChild(tdPlayer);
                     newTable.appendChild(tdScore);
-                    const target = document.getElementById('scoreTable');
+                    const target = document.getElementById('scoretable');
                     target.appendChild(newTable);
                     // newTable.appendChild(newRow);
                   }

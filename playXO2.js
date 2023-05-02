@@ -152,6 +152,7 @@ refRooms.on("value", data => {
                 refUser.child(currentUser.uid).update({
                     "score" : score_now,
                     [country] : {
+                        "completed_jigsaw" : false,
                         "subplace1" : userInfo[country]["subplace1"],
                         "subplace2" : userInfo[country]["subplace2"],
                         "subplace3" : userInfo[country]["subplace3"],
