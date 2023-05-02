@@ -67,7 +67,7 @@ refRooms.on("value", data => {
             room_id = roomID;
             win = roomInfo["win"]
             drawMark(roomID, data);
-
+                        
             player_x = [];
             ai_o = [];
             for(let i in roomInfo["tables"]){
