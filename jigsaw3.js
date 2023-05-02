@@ -229,7 +229,12 @@ document.onmousemove = _move_elem;
 document.onmouseup = _destroy;
 
 function backtoSubLV(){
-  window.location.href = "semi-level.html?data="+encodeURIComponent(JSON.stringify(country));
+  if(alredy_comleted || complete == true){
+    window.location.href = "level.html"
+  }
+  else{
+    window.location.href = "semi-level.html?data="+encodeURIComponent(JSON.stringify(country));
+  }
 }
 
 function toCountry(){
