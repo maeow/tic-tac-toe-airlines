@@ -25,12 +25,14 @@ function createUser(event){
         signupFeedback.innerHTML = "<i class='bi bi-check-circle-fill'></i> signup completed.";
         signupForm.reset();
 
+        const random_pic = Math.floor(Math.random() * 10+1);
         const user = firebase.auth().currentUser;
         var user_data = {
             username: email,
             score: 0,
             uid: user.uid,
             email: user.email,
+            "profile-number": random_pic, 
             "kr": {
                     "completed_jigsaw" : false,
                     'subplace1' : false,

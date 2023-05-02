@@ -24,10 +24,12 @@ async function readAcc() {
             if(id == user.uid){
               let score = snapshot.child(id).child("score").val();
               let username = snapshot.child(id).child("username").val();
+              let profile_num = snapshot.child(id).child("profile-number").val();
               // console.log(id);
               // console.log(score);
               // console.log(user.uid);
               // console.log("Match");
+              document.querySelector('.userphoto').src = "profile/avatar-"+profile_num+".png"
               document.getElementById("usernameText").innerHTML = username;
               document.getElementById("scoreText").innerHTML = score;
 

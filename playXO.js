@@ -54,6 +54,8 @@ refRooms.on("value", data => {
                     const userInfo = data[userID];
                     if(userInfo["uid"] == currentUser.uid){
                         document.getElementById('name1').innerText = userInfo["username"];
+                        document.querySelector('.dot-display-player1').src = "profile/avatar-"+userInfo["profile-number"]+".svg"
+                        document.querySelector('.dot-display-player2').src = "profile/ai-profile.svg"
                     }
                 }        
             })

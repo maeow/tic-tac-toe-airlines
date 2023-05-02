@@ -89,10 +89,12 @@ refRooms.on("value", data => {
                         if(userInfo["uid"] == player2){
                             document.getElementById('name2').innerText = userInfo["username"];
                             document.getElementById('mark2').innerText = 'player O';
+                            document.querySelector('.dot-display-player2').src = "profile/avatar-"+userInfo["profile-number"]+".svg"
                         }
                         if(userInfo["uid"] == player1){
                             document.getElementById('name1').innerText = userInfo["username"];
                             document.getElementById('mark1').innerText = 'player X';
+                            document.querySelector('.dot-display-player1').src = "profile/avatar-"+userInfo["profile-number"]+".svg"
                         }
                     }        
                 })
@@ -107,10 +109,12 @@ refRooms.on("value", data => {
                         if(userInfo["uid"] == player1){
                             document.getElementById('name2').innerText = userInfo["username"];
                             document.getElementById('mark2').innerText = 'player X';
+                            document.querySelector('.dot-display-player2').src = "profile/avatar-"+userInfo["profile-number"]+".svg"
                         }
                         if(userInfo["uid"] == player2){
                             document.getElementById('name1').innerText = userInfo["username"];
                             document.getElementById('mark1').innerText = 'player O';
+                            document.querySelector('.dot-display-player1').src = "profile/avatar-"+userInfo["profile-number"]+".svg"
                         }
                     }        
                 })
