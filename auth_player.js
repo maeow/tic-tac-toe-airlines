@@ -12,7 +12,13 @@ function createUser(event){
     const userRef = firebase.database().ref("users");
     const score = 0;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    let domian = ["email.com"];
+    let username = []
+    username.push(email);
+    const useremail = username.concat(domian);
+    const userlogin = useremail.join("@");
+
+    firebase.auth().createUserWithEmailAndPassword(userlogin, password)
     .then(() => {
         console.log("signup")
         signupFeedback.style = "color: green";
@@ -21,6 +27,7 @@ function createUser(event){
 
         const user = firebase.auth().currentUser;
         var user_data = {
+            username: email,
             score: 0,
             uid: user.uid,
             email: user.email,
@@ -162,7 +169,13 @@ function loginUser(event){
     const email = loginForm["input-email-login"].value;
     const password = loginForm["input-password-login"].value;
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    let domian = ["email.com"];
+    let username = []
+    username.push(email);
+    const useremail = username.concat(domian);
+    const userlogin = useremail.join("@");
+
+    firebase.auth().signInWithEmailAndPassword(userlogin, password)
     .then(() => {
         console.log("login")
         loginFeedback.style = "color: green";

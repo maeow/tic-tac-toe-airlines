@@ -21,12 +21,12 @@ async function readAcc() {
               var id = data.key;
               if(id == user.uid){
                 let score = snapshot.child(id).child("score").val();
-                let email = snapshot.child(id).child("email").val();
+                let username = snapshot.child(id).child("username").val();
                 // console.log(id);
                 // console.log(score);
                 // console.log(user.uid);
                 // console.log("Match");
-                document.getElementById("usernameText").innerHTML = email;
+                document.getElementById("usernameText").innerHTML = username;
                 document.getElementById("scoreText").innerHTML = score;
 
                 // console.log("Scoreboard");
