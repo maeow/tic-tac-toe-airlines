@@ -9,9 +9,31 @@ const firebaseConfig = {
     measurementId: "G-FCMED4Y7RB"
   };
 firebase.initializeApp(firebaseConfig)
+const refUser = firebase.database().ref("users");
+var country_list = ['fr', 'kr', 'usa', 'jp', 'th', 'uk'];
 
 async function readAcc() {
     console.log("read lobby");
+    refUser.once("value", data => {
+      data = data.val()
+  
+      const currentUser = firebase.auth().currentUser
+  
+      for (const userID in data){
+          const userInfo = data[userID];
+           if(userInfo["uid"] == currentUser.uid){
+              for(let ct of country_list){
+                 for(let ct_sp of userInfo[ct]){
+                  if(userInfo[ct][ct_sp] == true){
+                    let score_now =  userInfo['score'];
+                    userInfo['score'] = 100+score_now; 
+                  }
+                 }
+              }
+          }
+      }        
+  })
+
     firebase.auth().onAuthStateChanged((user) => {
     if(user){
       console.log(user)
