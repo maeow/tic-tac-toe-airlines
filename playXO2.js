@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         alert('Pls Log in')
         setTimeout(function(){
             window.location.href = "index.html"
-        }, 5000);
+        }, 1000);
     }
 });
 
@@ -139,7 +139,7 @@ refRooms.on("value", data => {
                         refUser.child(userID).child(country).update({
                            [sublevel] : true,
                         })
-                        
+
                         //เพิ่มคะแนน
                         for(let ct of country_list){
                             console.log(userInfo[ct]);

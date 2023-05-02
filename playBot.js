@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         alert('Pls Log in')
         setTimeout(function(){
             window.location.href = "index.html"
-        }, 5000);
+        }, 1000);
     }
 });
 
