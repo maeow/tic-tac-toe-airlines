@@ -67,7 +67,20 @@ refRooms.on("value", data => {
             room_id = roomID;
             win = roomInfo["win"]
             drawMark(roomID, data);
-                        
+            
+
+            refUser.once("value", data => {
+                data = data.val()
+    
+                for (const userID in data){
+                    const userInfo = data[userID];
+                    if(userInfo["uid"] == currentUser.uid){
+                        document.getElementById('name1').innerText = userInfo["username"];
+                    }
+                }        
+            })
+                
+
             player_x = [];
             ai_o = [];
             for(let i in roomInfo["tables"]){

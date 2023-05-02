@@ -80,33 +80,36 @@ refRooms.on("value", data => {
                 }
             }
             if(player1 == currentUser.uid){
-                document.getElementById('name1').innerText = currentUser.email;
-                document.getElementById('mark1').innerText = 'player X';
                 refUser.once("value", data => {
                     data = data.val()
     
                     for (const userID in data){
                         const userInfo = data[userID];
                         if(userInfo["uid"] == player2){
-                            document.getElementById('name2').innerText = userInfo["email"];
+                            document.getElementById('name2').innerText = userInfo["username"];
                             document.getElementById('mark2').innerText = 'player O';
+                        }
+                        if(userInfo["uid"] == player1){
+                            document.getElementById('name1').innerText = userInfo["username"];
+                            document.getElementById('mark1').innerText = 'player X';
                         }
                     }        
                 })
                 
             }
             else if(player2 == currentUser.uid){
-                document.getElementById('name1').innerText = currentUser.email;
-                document.getElementById('mark1').innerText = 'player O';
-
                 refUser.once("value", data => {
                     data = data.val()
     
                     for (const userID in data){
                         const userInfo = data[userID];
                         if(userInfo["uid"] == player1){
-                            document.getElementById('name2').innerText = userInfo["email"];
+                            document.getElementById('name2').innerText = userInfo["username"];
                             document.getElementById('mark2').innerText = 'player X';
+                        }
+                        if(userInfo["uid"] == player2){
+                            document.getElementById('name1').innerText = userInfo["username"];
+                            document.getElementById('mark1').innerText = 'player O';
                         }
                     }        
                 })
