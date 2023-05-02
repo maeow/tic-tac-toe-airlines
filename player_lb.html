@@ -65,7 +65,7 @@
 }
 .board{
   padding-top: 0rem;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
 }
 *[class^="stamp"]{
   width: 3.5vw;
@@ -82,13 +82,13 @@
 }
 .card-subtitle{
   width: 100%;
-  font-size: 1.25vw;
+  font-size: 1vw;
 }
 #in-card{
-  font-size: 1.5vw;
+  font-size: 1.25vw;
 }
 .card-text{
-  font-size: 1.75vw;
+  font-size: 1.5vw;
   font-weight: 800;
 }
 .card-body{
@@ -96,15 +96,16 @@
 }
 .btn{
   width: 15rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 .group-button{
-  
+  margin-top: 1.5rem;
   /* width: 10%; */
   /* position: absolute;
   left: 18vw;
   top: 25vw; */
   display: flex;
+  gap: 1vw;
   text-align: center;
   justify-content: center;
   flex-direction: column;
@@ -113,7 +114,8 @@
 }
 
 .group-button1{
-  
+  margin-top: 1.5rem;
+  gap: 1vw;
   width: 25%;
   /* position: absolute;
   left: 18vw;
@@ -123,9 +125,9 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 5rem;
 }
 .group-button1 > *{
+  height: auto;
   display: none;
 }
 
@@ -274,6 +276,7 @@
         <img src="img/circle.svg" id="lb_circle1">
         <img src="img/circle.svg" id="lb_circle2">
         <img src="img/circle.svg" id="lb_circle3">
+        <img src="img/star.svg" id="lb_star2">
 
         <div class="row board">
         <div class="col-12 col-sm-10 col-md-8 col-lg-5">
@@ -301,12 +304,12 @@
                           </div>
                           <h6 style="padding-top: 1rem;" class="card-subtitle mb-2 text-muted">แลนด์มาร์กประเทศที่คุณค้นพบ!</h6>
                           <div class="row">
-                              <div class="col-2 st" id="stamp"><img class="stamp-usa"  src="img-miew/stamp/usa.svg" alt="mgPBaR.png"></div>
-                              <div class="col-2 st" id="stamp"><img class="stamp-fr" src="img-miew/stamp/france.svg" alt="mgPBaR.png" border="0"></div>
-                              <div class="col-2 st" id="stamp"><img class="stamp-jp" src="img-miew/stamp/japan.svg" alt="mgPkxu.png" border="0"></div>
-                              <div class="col-2 st" id="stamp"><img class="stamp-kr" src="img-miew/stamp/korea.svg" alt="mgPh40.png" border="0"></div>
-                              <div class="col-2 st" id="stamp"><img class="stamp-th" src="img-miew/stamp/thailand.svg" alt="mgPBaR.png" border="0"></div>
-                              <div class="col-2 st" id="stamp"><img class="stamp-uk" src="img-miew/stamp/uk.svg" alt="mgPkxu.png" border="0"></div>
+                              <div class="col-2 st" id="stamp"><img class="stamp-usa"id="usa"  src="img-miew/stamp/usa.svg" alt="mgPBaR.png"></div>
+                              <div class="col-2 st" id="stamp"><img class="stamp-fr" id="fr" src="img-miew/stamp/france.svg" alt="mgPBaR.png" border="0"></div>
+                              <div class="col-2 st" id="stamp"><img class="stamp-jp" id="jp" src="img-miew/stamp/japan.svg" alt="mgPkxu.png" border="0"></div>
+                              <div class="col-2 st" id="stamp"><img class="stamp-kr" id="kr" src="img-miew/stamp/korea.svg" alt="mgPh40.png" border="0"></div>
+                              <div class="col-2 st" id="stamp"><img class="stamp-th" id="th" src="img-miew/stamp/thailand.svg" alt="mgPBaR.png" border="0"></div>
+                              <div class="col-2 st" id="stamp"><img class="stamp-uk" id="uk" src="img-miew/stamp/uk.svg" alt="mgPkxu.png" border="0"></div>
                           </div>
                       </div>
                           
@@ -350,6 +353,12 @@
                 <th scope="col">คะแนน</th>
               </tr>
             </thead>
+            <tbody id="scoretable">
+
+
+
+              
+            </tbody>
           </table></center>
       </div>
   </div>
