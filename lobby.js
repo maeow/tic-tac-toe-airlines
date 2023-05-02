@@ -46,6 +46,7 @@ async function readAcc() {
       userRef.once("value").then((snapshot) => {
           snapshot.forEach((data) => {
             var id = data.key;
+            const currentUser = firebase.auth().currentUser
             if(id == user.uid){
               let score = snapshot.child(id).child("score").val();
               let username = snapshot.child(id).child("username").val();
@@ -106,9 +107,10 @@ async function readAcc() {
               var playerScore = new Array;
                 for(let i = 0; i < ListScore.length; i++){
                   let score = ListScore[i];
-                  let name = ListPlayer[i];
+                  let name = ListID[i]["username"];
+                  let uid = ListID[i];
                   var arr = {
-                      score : score, username : name
+                      score : score, username : name, uid : uid["uid"]
                   }
           
                   playerScore = playerScore.concat(arr);
@@ -117,29 +119,39 @@ async function readAcc() {
                 playerScore.sort(function(a, b){return b.score - a.score});
                 // console.log(playerScore);
 
-                const newTable = document.createElement("tbody")
-                newTable.innerHTML = "<thead></thead>"
+                
+                // newTable.innerHTML = "<thead></thead>"
                 let num = 0
                 for(i of playerScore){
-                  if(num === 10){
-                    break
+                  if(num >= 10){
+                    // break
+                  }
+                  else{
+                    // const newRow = document.createElement("tr");
+                    const newTable = document.createElement("tr")
+                    const tdscope = document.createElement("td");
+                    const tdPlayer = document.createElement("td");
+                    const tdScore = document.createElement("td");
+                    tdscope.textContent = num+1;
+                    tdPlayer.textContent = i.username;
+                    tdScore.textContent = i.score;    
+                    newTable.appendChild(tdscope);
+                    newTable.appendChild(tdPlayer);
+                    newTable.appendChild(tdScore);
+                    const target = document.getElementById('scoreTable');
+                    target.appendChild(newTable);
+                    // newTable.appendChild(newRow);
                   }
                   num++
-                  const newRow = document.createElement("tr");
-                  const tdscope = document.createElement("td");
-                  const tdPlayer = document.createElement("td");
-                  const tdScore = document.createElement("td");
-                  tdscope.textContent = num;
-                  tdPlayer.textContent = i.username;
-                  tdScore.textContent = i.score;    
-                  newRow.appendChild(tdscope);
-                  newRow.appendChild(tdPlayer);
-                  newRow.appendChild(tdScore);
-                  newTable.appendChild(newRow);
                   console.log(i);
+
+                  if(i.uid == currentUser.uid){
+                    document.getElementById("rank").innerText = "อันดับที่ "+num;
+                  }
+
                 }
-                const target = document.getElementById('scoreTable');
-                target.appendChild(newTable);
+                
+                
             }
           });
         });
