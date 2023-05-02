@@ -7,10 +7,11 @@ body{
     overflow-x: hidden;
 }
 .board{
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 5rem;
+    /* align-items: center; */
 }
 
 .wave{
@@ -115,66 +116,6 @@ body{
 } */
 
 
-@media only screen and (max-width: 1071px){
-    .menu1{
-        display: none;
-    }
-    .menu2{
-        display: flex;
-    }
-    .board{
-        padding-top: 20vh;
-        padding-bottom: 10vh;
-        height: 150vh;
-    }
-}
-
-@media only screen and (max-width: 1050px) {
-    .menu1{
-        display: none;
-    }
-    .menu2{
-        display: flex;
-    }
-    .board{
-        padding-top: 20vh;
-        padding-bottom: 10vh;
-        height: 150vh;
-    }
-
-    #lb_plane{
-        width: 10vw;
-        position: absolute;
-        top: 20vw;
-        left: 10vw;
-    }
-
-    #lb_star1{
-        position: absolute;
-        width: 3vw;
-        top: 0;
-        left: 10vw;
-    }
-
-    #lb_star2{
-        position: absolute;
-        width: 3vw;
-        top: 5vw;
-        left: 70vw;
-        z-index: -1000;
-    }
-}
-
-@media only screen and (max-width: 670px) {
-    .stamp{
-        width: 80px;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .userphoto{
-        width: 100px;
-    }
-}
 
 
 .score{
@@ -208,12 +149,12 @@ h4,h5{
     width: 80%;
 }
 .card{
-    border-radius: 25px;
+    border-radius: 3rem;
     display: flex;
     width: 700px;
     /* min-width: 700px; */
-    border: solid 2px #000 ;
-    box-shadow: -11px 11px 4px #00000077;
+    border: solid 3px #ffffff ;
+    /* box-shadow: -11px 11px 4px #00000077; */
     background-color: #FFF8F8;
 }
 #in-card{
@@ -240,10 +181,10 @@ thead{
     color: #284673;
     font-weight: 700;
 }
-.card-text{
-    font-size: 1.5vw;
+/* .card-text{
+    font-size: 2rem;
     color: #284673;
-}
+} */
 /* .wrapped-stamp{
     display: flex;
     position: relative;

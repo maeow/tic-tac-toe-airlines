@@ -45,73 +45,6 @@
         
     }
 
-    .dot-level {
-    height: 15vw;
-    width: 15vw;
-    background-color: #ffffff;
-    border-radius: 50%;
-    display: inline-block;
-    transition:  0.25s ease-in-out;
-    /* display: none; */
-    }
-    .dot-level:hover ~ [class*='country-no']{
-        /* visibility: visible; */
-        transform: translateY(0px);
-        opacity: 1;
-    }
-
-    .dot-level1{
-    height: 15vw;
-    width: 15vw;
-    background-size: cover;
-    background-color: white;
-    background-position: 0% 50%;
-    opacity: 0.9;
-    border-radius: 50%;
-    transition:  2s;
-    display: none;
-    /* display: inline-block; */
-     border: rgba(255, 255, 255, 0.432) solid 5px;
-     box-shadow: rgba(0, 0, 0, 0.25) 9px 4px 10px;
-    
-    }
-    .dot-level1:hover{
-        opacity: 1;
-        /* animation: changes 4s  linear; */
-        transform: scale(1.05);
-        background-position: 100% 50%;
-        transition:  5s;
-    }
-    .dot-level1:hover ~ [class*='country-cp']{
-        /* visibility: visible; */
-        transform: translateY(0px);
-        opacity: 1;
-    }
-    /* #row-two > .col:nth-last-child(-n+3)  #country1-1, #row-two > .col:nth-last-child(-n+3)  #country2-2{
-        color: #284673;
-    } */
-
-    #plane{
-        position: relative;
-        margin-top: 2rem;
-        margin-left: 0.5rem;
-        width: 80%;
-    }
-    #stamp{
-        position: relative;
-        width: 90%;
-    }
-
-    .dot-level:hover{
-        background-color: #FFE3ED;
-        transform: scale(1.05);
-        cursor: pointer;
-    }
-
-    #grid-level{
-    position: relative;
-    margin-top: 2rem;
-    }
 
     #bottom-level{
     position: absolute;
@@ -120,61 +53,96 @@
     bottom: 0;
     animation : translate 4s ease-in-out infinite;
     }
-    @media only screen and (max-width: 1800px) {
-        /* .dot-level,.dot-level1{
-            width: 18vw;
-            height: 18vw;
-        } */
-        #grid-level{
-            width: 60vw;
-        }
-    }
-    @media only screen and (max-width: 980px) {
-    .row{
-        flex-direction: column;
-    }
-    .col{
-        margin-top: 1.75rem;
-    }
-    #grid-level{
-    padding-bottom: 5rem;
-    }
-    .dot-level,.dot-level1{
-        width: 15rem;
-        height: 15rem;
-    }
-    /* #row-two > .col:nth-last-child(-n+3)  #country1-1, #row-two > .col:nth-last-child(-n+3)  #country2-2{
-        color: white;
-    } */
+
+.all{
+    /* width: 50vw; */
+    width: 100vw;
+    padding-top: 5rem;
+    max-width: 1250px;
 }
 
-/* เซตว่าด่านหลักผ่านแล้ว  */
-/* .fr{
-    display: none;
-   
+.board{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.fr{
-    display: block;
-} */
-
-
+.stamp{
+    width: 6vw;
+}
+.userphoto{
+    width: 80%;
+}
     
 </style>
 <body>
-    
     <div class="container-fluid">
         <!-- <img id="top" src="img-miew/top.svg"> -->
         <img id="star" src="img-miew/star.svg">
         <img id="top-right" src="img-miew/top-right.svg">
         <img id="bottom-level" src="img-miew/bottom2.svg">
         
-        <div id="topic" class="container">
-            <!-- <a class="button" href="player_lb.html"><i class="bi bi-chevron-left"></i>ย้อนกลับ</a> -->
-            <h4>CHOOSE WHERE TO EXPLORE !</h4>
-            <h5>เลือกประเทศที่อยากสำรวจ!</h4>
-                
-        </div>
-    </div>
+        <!-- <div class="container all"> -->
+            <div class="row">
+                <div class="col-6">
+                    <div class="card" style="width: 35rem;">
+                        <div class="card-body">
+                            <div class="row">
+                                <b><h4 id="in-card" class="card-title">PASSPORT หนังสือเดินทาง</h5></b>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 d-flex flex-column align-items-center">
+                                    <img class="userphoto" src="https://sv1.picz.in.th/images/2023/04/04/mg5TWk.png" alt="mg5TWk.png" border="0" />
+                                    <h5 style="padding-top: 1vw;"id="in-card"><div id="rank">อันดับที่ </div></h5>
+                                </div>
+                                <div class="col-8">
+                                    <div class="row">
+                                        <div class="col-8">
+                                        <h6 class="card-subtitle mb-2 text-muted">ชื่อ:</h6>
+                                        <p class="card-text" id="usernameText">Stephanie</p>
+                                        <h6 class="card-subtitle mb-2 text-muted">แลนด์มาร์กประเทศที่คุณค้นพบ!</h6>
+                                        </div>
+                                        <div class="col">
+                                        <h6 class="card-subtitle mb-2 text-muted">คะแนน:</h6>
+                                        <p class="card-text" id="scoreText">0</p>
+                                    </div>  
+                                    <div class="row">
+                                        <div class="col" id="stamp"><img class="stamp" src="img-miew/stamp/usa.svg" alt="mgPBaR.png"></div>
+                                        <div class="col" id="stamp"><img class="stamp" src="img-miew/stamp/france.svg" alt="mgPBaR.png" border="0"></div>
+                                        <div class="col" id="stamp"><img class="stamp" src="img-miew/stamp/japan.svg" alt="mgPkxu.png" border="0"></div>
+                                        <div class="col" id="stamp"><img class="stamp" src="img-miew/stamp/korea.svg" alt="mgPh40.png" border="0"></div>
+                                        <div class="col" id="stamp"><img class="stamp" src="img-miew/stamp/thailand.svg" alt="mgPBaR.png" border="0"></div>
+                                        <div class="col" id="stamp"><img class="stamp" src="img-miew/stamp/uk.svg" alt="mgPkxu.png" border="0"></div>
+                                    </div>
+                                </div>
+                                    
+                                <div class="wrapped-stamp">
+                                    <div class="mockup-stamp">
+                                    </div>
+                                    <div class="mockup-stamp">
+                                    </div>
+                                    <div class="mockup-stamp">
+                                    </div>
+                                    <div class="mockup-stamp">
+                                    </div>
+                                    <div class="mockup-stamp">
+                                    </div>
+                                    <div class="mockup-stamp">
+                                    </div>
+                                </div>
+                                </div>
+                                
+                        </div>
+                        </div>
+                      </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-6">
+                    
+                </div>
+            </div>
+        <!-- </div> -->
     
     <!-- <script>
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
