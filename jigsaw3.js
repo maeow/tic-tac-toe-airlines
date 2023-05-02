@@ -1,6 +1,6 @@
 const img = new Image();
 const country = (decodeURIComponent(window.location.search.replace(/^.*?\=/,'')))
-country.replace('"')
+country.replaceAll('"')
 const refUser = firebase.database().ref("users");
 var country_list = {'fr' : "ประเทศฝรั่งเศส", 'kr':"ประเทศเกาหลี" , 'usa':"ประเทศฐอเมริกา" , 'jp':"ประเทศญี่ปุ่น", 'th':"ประเทศไทย", 'uk':"ประเทศอังกฤษ"};
 
@@ -221,4 +221,8 @@ document.onmouseup = _destroy;
 
 function backtoSubLV(){
   window.location.href = "semi-level.html?data="+encodeURIComponent(JSON.stringify(country));
+}
+
+function toCountry(){
+  window.location.href = "country/"+country+".html";
 }
