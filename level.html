@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
@@ -56,7 +56,7 @@
     }
     .dot-level:hover ~ [class*='country-no']{
         /* visibility: visible; */
-        transform: translateY(0px);
+        transform: translateY(10px);
         opacity: 1;
     }
 
@@ -84,7 +84,7 @@
     }
     .dot-level1:hover ~ [class*='country-cp']{
         /* visibility: visible; */
-        transform: translateY(0px);
+        transform: translateY(10px);
         opacity: 1;
     }
     /* #row-two > .col:nth-last-child(-n+3)  #country1-1, #row-two > .col:nth-last-child(-n+3)  #country2-2{
@@ -120,6 +120,9 @@
     bottom: 0;
     animation : translate 4s ease-in-out infinite;
     }
+
+
+
     @media only screen and (max-width: 1800px) {
         /* .dot-level,.dot-level1{
             width: 18vw;
@@ -163,7 +166,6 @@
 <body>
     
     <div class="container-fluid">
-        <!-- <img id="top" src="img-miew/top.svg"> -->
         <img id="star" src="img-miew/star.svg">
         <img id="top-right" src="img-miew/top-right.svg">
         <img id="bottom-level" src="img-miew/bottom2.svg">
@@ -265,6 +267,25 @@
             </div>
         </div>
     </div>
+
+        <!-- เข้าสู่ระบบก่อนเล่น -->
+        <div class="modal fade" id="modalCheckLoggedin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-body">
+                    
+                <span id="findcontent"><lord-icon
+                    src="https://cdn.lordicon.com/bmnlikjh.json"
+                    trigger="loop"
+                    colors="primary:#121331">
+                </lord-icon><b>คุณยังไม่ได้เข้าสู่ระบบ</b> <br><h5>เข้าสู่ระบบก่อนเข้าเล่นเกม</h5></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="check-loggedin" class="btn btn-secondary"><a href="index.html" style="text-decoration: none; color: white;">โอเค เข้าใจแล้ว</a></button>
+                </div>
+                </div>
+            </div>
+        </div>
     <!-- <script>
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {

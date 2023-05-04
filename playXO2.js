@@ -122,7 +122,8 @@ refRooms.on("value", data => {
         }
     }
     if(data[room_id]["cancle"] == true){
-        document.getElementById('tieModal').innerHTML = '<span ><b style="color: black;">จบเกม</b><br><h5 style="color: black;text-align:left;">คู่แข่งทำการยกเลิกการแข่งขัน</h5></span>'
+        document.getElementById('tieModal').innerHTML = '<span ><i class="bi bi-x-octagon" style="color: black;"></i><b style="color: black;">จบเกม</b><br><h5 style="color: black;text-align:left; margin-left:15px;">คู่แข่งทำการยกเลิกการแข่งขัน</h5></span>'
+        $('#modalTie').modal({backdrop: 'static', keyboard: false})
         $('#modalTie').modal('toggle')
     }
     if(data[room_id]["win"] == true){

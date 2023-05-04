@@ -181,6 +181,42 @@ span > #text-modal{
 .bi{
     font-size: 2rem;
 }
+
+/* for check-login modal */
+#check-loggedin{
+    font-weight: 500;
+    background-color: #284673;
+    transition:  0.15s ease-out;
+}
+
+#check-loggedin:hover{
+    background-color: #ADC9FF;
+    border: 1px solid #ADC9FF;
+}
+.modal-footer{
+    border: none;
+}
+
+span > #check{
+margin-top: 0.5rem;
+color: black;
+text-align: left;
+font-size: 1rem;
+}
+
+.modal-body{
+  color: #000000;
+  font-size: 1.25rem;
+}
+
+lord-icon{
+    position: absolute;
+}
+#check-inXO{
+    color: black;
+    margin-left: 2.5rem;
+}
+
 @media only screen and (max-width: 1024px) {
     .dot-display-player1,.dot-display-player2 {
         height: 10rem;

@@ -22,6 +22,7 @@ body{
     bottom: 0;
     left: 0;
     position: absolute;
+    animation : translate 4s ease-in-out infinite;
     
 }
 
@@ -39,7 +40,7 @@ body{
     bottom: 0;
     right: 0;
     position: absolute;
-    /* animation : translate 4s ease-in-out infinite; */
+    animation : translate 4s ease-in-out infinite;
 }
 
 @keyframes translate {
@@ -118,6 +119,7 @@ button{
     left: 10vw;
     top: 15vw;
     position: absolute;
+    animation : translate 4s ease-in-out infinite;
 }
 
 
@@ -126,11 +128,18 @@ button{
     top: 0;
     left: 30vw;
     width: 3.25vw;
-    /* animation : translate-star 1.25s ease-in-out ; */
+    animation : translate-star 1.25s ease-in-out ;
 }
+
 @keyframes translate-star {
     from {transform: translateY(-500px);}
     to {transform: translateY(0px);}
+    }
+
+@keyframes translate{
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(20px);}
+    100% {transform: translateY(0px);}
     }
 
 #star2{
@@ -138,7 +147,7 @@ button{
     top: 5vh;
     right: 12vw;
     width: 3vw;
-    /* animation : translate-star 1.25s ease-in-out ; */
+    animation : translate-star 1.5s ease-in-out ;
 }
 
 #circle{
@@ -146,7 +155,7 @@ button{
     width: 3vw;
     top: 20vw;
     left: 6vw;
-    /* animation : translate 4s ease-in-out infinite; */
+    animation : translate 4s ease-in-out infinite;
 }
 
 #circle2{
@@ -176,7 +185,7 @@ button{
     width: 5vw;
     bottom: 17vw;
     right: 30vw;
-    /* animation : translate 4s ease-in-out infinite; */
+    animation : translate 4s ease-in-out infinite;
 }
 
 
