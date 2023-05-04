@@ -69,6 +69,18 @@
     #next-to-ani{
         margin-left: 2.5rem;
     }
+    .turn{
+      background-color: #FFE3ED;
+      color: #284673;
+      text-align: center;
+      width: 15rem;
+      padding: 0.5rem;
+      border-radius: 50px;
+    }
+    h4 > b{
+      color: #284673;
+      font-weight: 800;
+    }
 </style>
 <body>
     
@@ -82,7 +94,12 @@
             <a class="button" href="#" data-toggle="modal" data-target="#modalTerminate" data-backdrop="static"><i class="bi bi-chevron-left"></i>ย้อนกลับ</a>
             <h4>WIN TIC-TAC-TOE TO COLLECT JIGSAW~</h4>
             <h5>ชนะ XO เพื่อสะสมจิ๊กซอว์ ~!</h4>
+              <br>
+              <center><h4 class="turn" >Turn: <b>X</b></h4></center>
         </div>
+        <!-- <div>
+          <h4>Turn:</h4>
+        </div> -->
         <div class="modal fade" id="modalWin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
