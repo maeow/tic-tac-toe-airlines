@@ -60,7 +60,16 @@ async function readAcc() {
                     }
                   if(jigsaw_all == 6){
                     document.querySelectorAll('.reset-game')[0].style.display ="block"
-                    document.querySelectorAll('.reset-game')[1].style.display ="block"
+                    function myFunction(x) {
+                      if (x.matches) { // If media query matches
+                        document.querySelectorAll('.reset-game')[1].style.display ="block"
+                      } else {
+                        document.querySelectorAll('.reset-game')[1].style.display ="none"
+                      }
+                    }
+                    var x = window.matchMedia("(max-width: 1067px)")
+                    myFunction(x)
+                    x.addListener(myFunction)
                   }
                 }
               })
