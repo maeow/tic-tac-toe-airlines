@@ -125,10 +125,12 @@ refRooms.on("value", data => {
         document.getElementById('tieModal').innerHTML = '<span ><i class="bi bi-x-octagon" style="color: black;"></i><b style="color: black;">จบเกม</b><br><h5 style="color: black;text-align:left; margin-left:15px;">คู่แข่งทำการยกเลิกการแข่งขัน</h5></span>'
         $('#modalTie').modal({backdrop: 'static', keyboard: false})
         $('#modalTie').modal('toggle')
+        return
     }
     if(data[room_id]["win"] == true){
         if(data[room_id]["winner"] == "draw"){
             $('#modalTie').modal('toggle')
+            return
         }
         else if(data[room_id]["winner"] == currentUser.uid){
             let country = country_link.split("AND")[0].replace('"', '')
@@ -149,6 +151,12 @@ refRooms.on("value", data => {
                 }
                 if(userInfo[country][sublevel] == false){
                     score_now += 100;
+                }
+                if(userInfo["already-complete"] == undefined){
+                    score_now = score_now 
+                }
+                else{
+                    score_now = score_now + (userInfo["already-complete"]*5400)
                 }
                 refUser.child(currentUser.uid).update({
                     "score" : score_now,
@@ -172,7 +180,14 @@ refRooms.on("value", data => {
         }
         else if(data[room_id]["winner"] != currentUser.uid){
             $('#modalLose').modal('toggle')
+            return
         }
+    }
+    if(data[room_id]["turn"] == data[room_id]["player1-id"]){
+        document.getElementById("whoTurn").innerText ="X"
+    }
+    else{
+        document.getElementById("whoTurn").innerText ="O"
     }
 })
 

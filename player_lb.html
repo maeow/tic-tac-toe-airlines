@@ -380,7 +380,7 @@
         <center><div class="group-button">
           <a href="./level.html" class="btn" role="button">เล่นเกมเล้ย!</a></button>
            <a href="./howtoplay.html" class="btn" role="button">วิธีเล่น</a></button>
-           <button type="button" onclick="" data-toggle="modal" data-target="#modalResetGame" class="btn reset-game" >เริ่มเล่นเกมใหม่</button>
+           <button type="button" data-toggle="modal" data-target="#modalResetGame" class="btn reset-game" >เริ่มเล่นเกมใหม่</button>
            <button type="button" onclick="logout()" class="btn" >ออกจากระบบ</button>
          </div></center>
     </div>
@@ -410,7 +410,7 @@
        <center><div class="group-button1">
        <a href="./level.html" class="btn" role="button">เล่นเกมเล้ย!</a></button>
         <a href="./howtoplay.html" class="btn" role="button">วิธีเล่น</a></button>
-        <button type="button" onclick="" data-toggle="modal" data-target="#modalResetGame" class="btn reset-game" >เริ่มเล่นเกมใหม่</button>
+        <button type="button" data-toggle="modal" data-target="#modalResetGame" class="btn reset-game" >เริ่มเล่นเกมใหม่</button>
         <button type="button" onclick="logout()" class="btn" >ออกจากระบบ</button>
       </div></center>
 
@@ -433,7 +433,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" id="to-resume" class="btn to-resume" data-dismiss="modal">ไม่เป็นไร</button>
-            <button type="button" id="to-reset" class="btn to-reset" style="font-size:1.25rem; border-radius: var(--bs-btn-border-radius); border: 0 ;" onclick="">รีเซ็ตเกม</button>
+            <button type="button" id="to-reset" onclick="resetGame()" class="btn to-reset" style="font-size:1.25rem; border-radius: var(--bs-btn-border-radius); border: 0 ;" onclick="">รีเซ็ตเกม</button>
           </div>
         </div>
       </div>

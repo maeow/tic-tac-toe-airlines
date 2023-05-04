@@ -11,6 +11,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 const refUser = firebase.database().ref("users");
 var country_list = ['fr', 'kr', 'usa', 'jp', 'th', 'uk'];
+var already_comp = 0
 
 async function readAcc() {
   firebase.auth().onAuthStateChanged((user) => {
@@ -44,10 +45,22 @@ async function readAcc() {
                 ListScore.push(score);
 
                 if(userid["uid"] == currentUser.uid){
-                  for(let ct of country_list){
-                    if(userid[ct]["completed_jigsaw"] == true){
+                  let jigsaw_all = 0;
+                  if(userid["already-complete"] != undefined && userid["already-complete"] != 0){
+                    already_comp = userid["already-complete"];
+                    for(let ct of country_list){
                       document.getElementById(ct).style.visibility = "visible"
                     }
+                  }
+                    for(let ct of country_list){
+                      if(userid[ct]["completed_jigsaw"] == true){
+                        document.getElementById(ct).style.visibility = "visible"
+                        jigsaw_all++;
+                      }
+                    }
+                  if(jigsaw_all == 6){
+                    document.querySelectorAll('.reset-game')[0].style.display ="block"
+                    document.querySelectorAll('.reset-game')[1].style.display ="block"
                   }
                 }
               })
@@ -111,3 +124,83 @@ async function readAcc() {
 }
 
 window.onload = readAcc();
+
+function resetGame(){
+  already_comp += 1;
+  refUser.child(firebase.auth().currentUser.uid).update({
+    "already-complete": already_comp,
+    "kr": {
+      "completed_jigsaw" : false,
+      'subplace1' : false,
+      'subplace2' : false,
+      'subplace3' : false,
+      'subplace4' : false,
+      'subplace5' : false,
+      'subplace6' : false,
+      'subplace7' : false,
+      'subplace8' : false,
+      'subplace9' : false,
+      },
+  "usa": {
+      "completed_jigsaw" : false,
+      'subplace1' : false,
+      'subplace2' : false,
+      'subplace3' : false,
+      'subplace4' : false,
+      'subplace5' : false,
+      'subplace6' : false,
+      'subplace7' : false,
+      'subplace8' : false,
+      'subplace9' : false,
+      },
+  "fr": {
+      "completed_jigsaw" : false,
+      'subplace1' : false,
+      'subplace2' : false,
+      'subplace3' : false,
+      'subplace4' : false,
+      'subplace5' : false,
+      'subplace6' : false,
+      'subplace7' : false,
+      'subplace8' : false,
+      'subplace9' : false,
+  },
+  "th": {
+      "completed_jigsaw" : false,
+      'subplace1' : false,
+      'subplace2' : false,
+      'subplace3' : false,
+      'subplace4' : false,
+      'subplace5' : false,
+      'subplace6' : false,
+      'subplace7' : false,
+      'subplace8' : false,
+      'subplace9' : false,
+  },
+  "jp": {
+      "completed_jigsaw" : false,
+      'subplace1' : false,
+      'subplace2' : false,
+      'subplace3' : false,
+      'subplace4' : false,
+      'subplace5' : false,
+      'subplace6' : false,
+      'subplace7' : false,
+      'subplace8' : false,
+      'subplace9' : false,
+  },
+  "uk": {
+      "completed_jigsaw" : false,
+      'subplace1' : false,
+      'subplace2' : false,
+      'subplace3' : false,
+      'subplace4' : false,
+      'subplace5' : false,
+      'subplace6' : false,
+      'subplace7' : false,
+      'subplace8' : false,
+      'subplace9' : false,
+  },
+})
+window.location.href = "player_lb.html"
+}

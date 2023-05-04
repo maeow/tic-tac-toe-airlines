@@ -6,10 +6,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("User :", user);
         
-    } else {
-        alert('Pls Log in')
+    } else if(!user){
+        $('#modalCheckLoggedin').modal('toggle')
         setTimeout(function(){
             window.location.href = "index.html"
+        }, 2000);
+    }
+    else if(!country){
+        alert('Pls choose country')
+        setTimeout(function(){
+            window.location.href = "level.html"
         }, 1000);
     }
 });

@@ -8,10 +8,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       console.log("User :", user);
         
     } else {
-        alert('Pls Log in')
+        $('#modalCheckLoggedin').modal('toggle')
         setTimeout(function(){
             window.location.href = "index.html"
-        }, 1000);
+        }, 2000);
     }
 });
 

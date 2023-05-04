@@ -97,13 +97,19 @@ refRooms.on("value", data => {
                 for(let ct of country_list){
                     console.log(userInfo[ct]);
                     for(let ct_sp in userInfo[ct]){
-                       if(userInfo[ct][ct_sp] == true){
+                       if(userInfo[ct][ct_sp] == true && ct_sp != 'completed_jigsaw'){
                             score_now += 100;
                         }
                     }
                 }
                 if(userInfo[country][sublevel] == false){
                     score_now += 100;
+                }
+                if(userInfo["already-complete"] == undefined){
+                    score_now = score_now 
+                }
+                else{
+                    score_now = score_now + (userInfo["already-complete"]*5400)
                 }
                 refUser.child(currentUser.uid).update({
                     "score" : score_now,
@@ -130,6 +136,7 @@ refRooms.on("value", data => {
             return
         }
     }
+    document.getElementById("whoTurn").innerText = data[room_id]["turn"];
 })
 
 function drawMark(roomID, data){
