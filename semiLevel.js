@@ -3,19 +3,20 @@ const refUser = firebase.database().ref("users");
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("User :", user);
-        
+      if(!country){
+        document.getElementById("headModal").innerText = "คุณยังไม่ได้เลือกด่าน";
+        document.getElementById("bodyModal").innerText = "เลือกด่านก่อนเข้าเล่นเกม";
+        $('#modalCheckLoggedin').modal('toggle')
+        setTimeout(function(){
+            window.location.href = "level.html"
+        }, 2000);
+    }
     } 
     else if(!user){
         $('#modalCheckLoggedin').modal('toggle')
         setTimeout(function(){
             window.location.href = "index.html"
         }, 2000);
-    }
-    else if(!country){
-        alert('Pls choose country')
-        setTimeout(function(){
-            window.location.href = "level.html"
-        }, 1000);
     }
 });
 

@@ -26,11 +26,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log("User :", user);
         
-    } else {
-        alert('Pls Log in')
+    } else if(!user){
+        $('#modalCheckLoggedin').modal('toggle')
         setTimeout(function(){
             window.location.href = "index.html"
-        }, 1000);
+        }, 2000);
     }
 });
 
