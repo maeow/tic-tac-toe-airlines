@@ -2,7 +2,7 @@ const img = new Image();
 const country = (decodeURIComponent(window.location.search.replace(/^.*?\=/,'')))
 country.replaceAll('"')
 const refUser = firebase.database().ref("users");
-var country_list = {'fr' : "ประเทศฝรั่งเศส", 'kr':"ประเทศเกาหลี" , 'usa':"ประเทศฐอเมริกา" , 'jp':"ประเทศญี่ปุ่น", 'th':"ประเทศไทย", 'uk':"ประเทศอังกฤษ"};
+var country_list = {'fr' : "ประเทศฝรั่งเศส", 'kr':"ประเทศเกาหลีใต้" , 'usa':"สหรัฐอเมริกา" , 'jp':"ประเทศญี่ปุ่น", 'th':"ประเทศไทย", 'uk':"สหราชอาณาจักร"};
 var lasttouch_top, lasttouch_left;
 
 if(screen.width < 1000){
